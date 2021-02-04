@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import SNSFooter from '../layout/SNSFooter';
 
 const MainPage = () => {
     return (
-        <>
+        <MainPageWrapper>
         <MainSection>
             <TextWrapper>
                 <MainText>
@@ -81,9 +82,72 @@ const MainPage = () => {
             제로나인즈는 더 나은 세상을 만들기 위해 노력하는 수많은 사람들과 함께 성장해요.<br/>소셜섹터 실무자의 역량을 높이고, 사회적 가치를 확대하는 자체 플랫폼을 기획하고 운영하고 있습니다.
             </ThirdParagraph>
         </ThirdSection>
-        </>
+        <FourthSection>
+            <FourthWrapper>
+                <FourthTitle>
+                    제로나인즈의 라이프스타일 . <span>Lifestyle blog</span>
+                </FourthTitle>
+                <FourthParagraph>
+                무한한 가능성의 제로다움. 맺음과 연결의 나인다움. 채움의 미학.<br/>모든 제로나인즈 맴버들은 오너쉽과 겸손, 자유와 책임,<br/>열정과 재미라는 핵심 가치를 기반으로 일합니다.<br/>함께 성장하고 동시에 모두가 재미있게 일하는 조직이 되기 위해<br/>다양한 시도와 문화를 이어가고 있습니다.
+                </FourthParagraph>
+                <FourthBtn>
+                    → 과연 그럴까? 제.나.즈.다움.
+                </FourthBtn>
+            </FourthWrapper>
+        </FourthSection>
+        <FifthSection>
+            <FifthTitle>
+                제로나인즈의 시선 . <span>Insight blog</span>
+            </FifthTitle>
+            <FifthSectionWrapper>
+            <FifthParagraph>최신의 소식과 제로나인즈의 시각으로 인사이트를 제공합니다.</FifthParagraph>
+            <FifthBtn>
+                → 더 많이 살펴볼까?
+            </FifthBtn>
+            </FifthSectionWrapper>
+            <FifthSectionCardWrapper>
+                <FifthSectonCard></FifthSectonCard>
+                <FifthSectonCard></FifthSectonCard>
+                <FifthSectonCard></FifthSectonCard>
+            </FifthSectionCardWrapper>
+        </FifthSection>
+        <SixthSection>
+            <SixthTitle>
+                혁신도시 세종 - 빅파워 서울에서 작업합니다.
+            </SixthTitle>
+            <SixthSectionCardWrapper>
+                <SixthSectionCard>
+                    <SixthCardText>
+                    SEOJONG OFFICE (본사) <br/> 세종 조치원읍 세종로2639, U동 410호<br/>0507-1370-9590
+                    </SixthCardText>
+                    <SixthMapBtn>지도보기</SixthMapBtn>
+                </SixthSectionCard>
+                <SixthSectionCard>
+                    <SixthCardText>
+                        SEOUl OFFICE <br/>서울 마포구 잔다리로 28, 7f<br/>02-1234-4567
+                    </SixthCardText>
+                    <SixthMapBtn>지도보기</SixthMapBtn>
+                </SixthSectionCard>
+                <SixthSectionCard>
+                <SixthCardText>
+                SEOUL BRANCH<br/>서울 광진구 군자로70, 4f<br/>02-1234-4567
+                </SixthCardText>
+                <SixthMapBtn>지도보기</SixthMapBtn>
+                </SixthSectionCard>
+            </SixthSectionCardWrapper>
+        </SixthSection>
+        <SNSFooter/>
+        </MainPageWrapper>
     )
 }
+
+const MainPageWrapper = styled.div`
+    height : auto;
+    z-index : 2;
+    position : relative;
+    background-color : white;
+    margin : 0 0 1000px 0;
+`
 
 const MainSection = styled.div`
     font-family: 'Noto Sans KR', sans-serif;
@@ -164,7 +228,7 @@ const ViewBtn = styled.div`
 `
 
 const ThirdSection = styled.div`
-    margin : 269px 245px 0;
+    margin : 269px 245px 186px;
 `
 
 const ThirdTitle = styled.p`
@@ -208,6 +272,123 @@ const ThirdParagraph = styled.p`
     font-weight : 600;
     line-height : 45px;;
     margin : 119px 0 0 0;
+`
+
+const FourthSection = styled.div`
+    background-color : #eee;
+    height : 100vh;
+`
+
+const FourthWrapper = styled.div`
+    margin : 0 245px;
+    padding : 332px 0 0 0;
+`
+
+const FourthTitle = styled.p`
+    font-size : 48px;
+    font-weight : 600;
+
+    & > span {
+        font-weight : 200;
+    }
+`
+
+const FourthParagraph = styled.p`
+    font-size : 24px;
+    line-height : 40px;
+    margin : 83px 0 0 0;
+`
+
+const FourthBtn = styled.div`
+    color : #3503FF;
+    font-size : 18px;
+    font-weight : 600;
+    cursor : pointer;
+    margin : 21px 0 0 0;
+`
+
+const FifthSection = styled.div`
+    margin : 0 245px;
+`
+
+const FifthSectionWrapper = styled.div`
+    display : flex;
+    justify-content : space-between;
+    margin : 56px 0 0 0;
+`
+
+const FifthTitle = styled.p`
+    font-size : 48px;
+    font-weight : 600;
+    margin : 247px 0 0 0;
+
+    & > span {
+        font-weight : 200;
+    }
+`
+
+const FifthParagraph = styled.p`
+    font-size : 24px;
+`
+
+const FifthBtn = styled.div`
+    color : #3503FF;
+    font-size : 18px;
+    font-weight : 600;
+    cursor : pointer;
+`
+
+const FifthSectionCardWrapper = styled.div`
+    display : flex;
+    justify-content : space-between;
+    margin : 110px 0 0 0;
+`
+
+const FifthSectonCard = styled.div`
+    width : 465px;
+    height : 372px;
+    background-color : #eee;
+`
+
+const SixthSection = styled.div`
+    margin : 0 245px 260px;
+`
+
+const SixthTitle = styled.p`
+    margin : 280px 0 0 0;
+    font-size : 48px;
+    font-weight : 600;
+`
+
+const SixthSectionCardWrapper = styled.div`
+    display : flex;
+    justify-content : space-between;
+    margin : 90px 0 0 0;
+`
+
+const SixthSectionCard = styled.div`
+    width : 465px;
+    height : 372px;
+    background-color : #eee;
+    position : relative;
+`
+
+const SixthCardText = styled.p`
+    position : absolute;
+    font-weight : 600;
+    font-size : 24px;
+    line-height : 140%;
+    top : 30px;
+    left : 25px;
+`
+
+const SixthMapBtn = styled.p`
+    cursor : pointer;
+    position : absolute;
+    top : 195px;
+    left : 25px;
+    font-size : 24px;
+    font-weight : 600;
 `
 
 export default MainPage;

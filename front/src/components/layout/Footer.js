@@ -35,6 +35,8 @@ const FooterWrapper = styled.div`
     background-color : #2E2E2E;
     display : block;
     font-family: 'Noto Sans KR', sans-serif;
+    position: fixed;
+    bottom: 0;
 `
 
 const FooterInnerContainer = styled.div`

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import RightNav from './RightNav';
 
 import logo from '../../../static/img/logo.png';
 
@@ -7,7 +8,10 @@ const AppLayout = () => {
 
     const [open, setOpen] = useState(false);
 
+    console.log(open);
+
     return (
+        <>
         <LayoutWrapper>
             <LogoWrapper>
                 <img src={logo} alt="로고"/>
@@ -16,15 +20,17 @@ const AppLayout = () => {
                 <HamburgerMenu open={open}></HamburgerMenu>
             </MenuBtn>
         </LayoutWrapper>
+        <RightNav open={open}/>
+        </>
     )
 }
 
 const LayoutWrapper = styled.div`
-    height : 176px;
     display : flex;
     justify-content : space-between;
     position : fixed;
     width : 100%;
+    z-index : 10;
 `
 
 const LogoWrapper = styled.div`
@@ -69,6 +75,7 @@ const HamburgerMenu = styled.div`
             top: 0;
             transform: rotate(45deg);
             transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            background : white;
         `}
     }
 
@@ -88,6 +95,7 @@ const HamburgerMenu = styled.div`
             bottom: 0;
             transform: rotate(-45deg);
             transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            background : white;
         `}
     }
 `
