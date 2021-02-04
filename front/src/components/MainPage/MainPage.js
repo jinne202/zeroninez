@@ -74,9 +74,6 @@ const MainPage = () => {
                 <CommunityCard>
                     <CommunityTitle>mingle.com<span>SNG Based PR Platform</span></CommunityTitle>
                 </CommunityCard>
-                <CommunityCard>
-                    <CommunityTitle>cobalt social sector<span>Local-Culture Dev.</span></CommunityTitle>
-                </CommunityCard>
             </ThirdCardListWrapper>
             <ThirdParagraph>
             제로나인즈는 더 나은 세상을 만들기 위해 노력하는 수많은 사람들과 함께 성장해요.<br/>소셜섹터 실무자의 역량을 높이고, 사회적 가치를 확대하는 자체 플랫폼을 기획하고 운영하고 있습니다.
@@ -202,10 +199,13 @@ const SecondParagraph = styled.p`
 const ListWrapper = styled.div`
     margin : 148px 0 0 0;
     display : flex;
+    flex-wrap: wrap;
+    gap : 30px;
     justify-content : space-between;
 `
 
 const CardWrapper = styled.div`
+    margin : 0 0 70px 0;
 `
 
 const CardTitle = styled.p`
@@ -228,7 +228,7 @@ const ViewBtn = styled.div`
 `
 
 const ThirdSection = styled.div`
-    margin : 269px 245px 186px;
+    margin : 199px 245px 186px;
 `
 
 const ThirdTitle = styled.p`
@@ -240,15 +240,28 @@ const ThirdTitle = styled.p`
 const ThirdCardListWrapper = styled.div`
     margin : 100px 0 0 0;
     display : flex;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content : space-between;
 `
 
 const CommunityCard = styled.div`
-    width : 263px;
-    height : 263px;
+    width : 24%;
+    min-width : 240px;
+    box-sizing : border-box;
+    height : 267px;
     display : block;
     position : relative;
     background-color : #eee;
+    margin : 0 0 30px 0;
+    
+    @media (min-width: 990px) and (max-width: 1490px) {
+        width : 48%;
+    }
+
+    @media (max-width: 989px) {
+        width : 100%;
+    }
 `
 
 const CommunityTitle = styled.p`
@@ -276,7 +289,7 @@ const ThirdParagraph = styled.p`
 
 const FourthSection = styled.div`
     background-color : #eee;
-    height : 100vh;
+    height : 980px;
 `
 
 const FourthWrapper = styled.div`
@@ -342,12 +355,19 @@ const FifthSectionCardWrapper = styled.div`
     display : flex;
     justify-content : space-between;
     margin : 110px 0 0 0;
+    flex-wrap: wrap;
+    gap: 12px;
 `
 
 const FifthSectonCard = styled.div`
-    width : 465px;
+    width : 32%;
     height : 372px;
     background-color : #eee;
+    margin : 0 0 20px 0;
+
+    @media (min-width: 990px) and (max-width: 1490px) {
+        width : 48%;
+    }
 `
 
 const SixthSection = styled.div`
@@ -364,13 +384,20 @@ const SixthSectionCardWrapper = styled.div`
     display : flex;
     justify-content : space-between;
     margin : 90px 0 0 0;
+    flex-wrap: wrap;
+    gap: 12px;
 `
 
 const SixthSectionCard = styled.div`
-    width : 465px;
+    width : 32%;
     height : 372px;
     background-color : #eee;
+    margin : 0 0 20px 0;
     position : relative;
+
+    @media (min-width: 990px) and (max-width: 1490px) {
+        width : 48%;
+    }
 `
 
 const SixthCardText = styled.p`
