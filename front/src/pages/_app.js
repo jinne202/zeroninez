@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import '../styles/global.css';
+import wrapper from '../store/configureStore';
 
 const ZNZ = ({ Component }) => {
   return (
@@ -21,4 +22,4 @@ const ZNZ = ({ Component }) => {
 //   Component: PropTypes.elementType.isRequired,
 // };
 
-export default ZNZ;
+export default wrapper.withRedux(ZNZ);
