@@ -11,6 +11,8 @@
   "author": "holix",
   "license": "MIT",
   "dependencies": {
+    "npm": "^7.5.4",
+    "install": "^0.13.0",
     "@toast-ui/react-calendar": "^1.0.5",
     "axios": "^0.21.0",
     "next": "^10.0.5",
