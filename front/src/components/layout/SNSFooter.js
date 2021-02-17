@@ -43,7 +43,7 @@ const SNSFooter = () => {
 }
 
 const SNSFooterWrapper = styled.div`
-    margin : 0 245px;
+    margin : 0 12%;
 `
 
 const SNSWrapper = styled.div`
@@ -74,6 +74,10 @@ const ComponyInfo = styled.div`
         font-size : 18px;
         margin : 0 25px 0 0;
         font-weight : 600;
+
+        @media (min-width: 1280px) and (max-width: 1600px) {
+            font-size : 14px;
+        }
     }
 
     & > ul > li:last-child {
@@ -84,6 +88,10 @@ const ComponyInfo = styled.div`
 const CompanyMent = styled.div`
     display : flex;
     font-size : 18px;
+    
+    @media (min-width: 1280px) and (max-width: 1600px) {
+        font-size : 14px;
+    }
 
      & > p {
          margin : 0 0 0 25px;

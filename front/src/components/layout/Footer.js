@@ -41,7 +41,7 @@ const FooterWrapper = styled.div`
 
 const FooterInnerContainer = styled.div`
     padding : 300px 0 0 0;
-    margin : 0 0 0 245px;
+    margin : 0 12%;
     display : flex;
 `
 
@@ -52,12 +52,20 @@ const FooterTitle = styled.p`
     line-height : 103%;
     color : #00FFB2;
     margin : 0;
+
+    @media (min-width: 990px) and (max-width: 1440px) {
+        font-size : 100px;
+    }
 `
 
 const FooterSubTitle = styled.p`
     font-size : 48px;
     color : #00FFB2;
     line-height : 65px;
+
+    @media (min-width: 990px) and (max-width: 1440px) {
+        font-size : 30px;
+    }
 `
 
 const FooterText = styled.div`
@@ -68,6 +76,13 @@ const FooterButton = styled.div`
     margin : 0 0 0 100px;
     position : relative;
     cursor : pointer;
+
+    @media (min-width: 990px) and (max-width: 1440px) {
+        & > svg {
+            width : 250px;
+            height : 250px;
+        }
+    }
 `
 
 const BtnText = styled.p`
@@ -77,6 +92,14 @@ const BtnText = styled.p`
     font-size : 30px;
     line-height : 41px;
     margin : 0;
+
+    @media (min-width: 990px) and (max-width: 1440px) {
+        top : 90px;
+        left : 80px;
+        font-size : 24px;
+        line-height : 30px;
+    }
+
 `
 
 const CopyRightSection = styled.p`

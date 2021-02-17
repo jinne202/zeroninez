@@ -153,7 +153,7 @@ const MainSection = styled.div`
 `
 
 const TextWrapper = styled.div`
-    margin : 0 0 0 245px;
+    margin : 0 0 0 12%;
     padding : 322px 0 0 0;
 `
 
@@ -177,7 +177,7 @@ const NumberAnimation = styled.div`
 `
 
 const SecondSection = styled.div`
-    margin : 0 245px;
+    margin : 0 12%;
     padding : 123px 0 0 0;
 `
 
@@ -194,6 +194,10 @@ const SecondParagraph = styled.p`
     margin : 117px 0 0 0;
     line-height : 35px;
     letter-spacing : -2%;
+
+    @media (min-width: 1280px) and (max-width: 1600px) {
+        font-size : 18px;
+    }
 `
 
 const ListWrapper = styled.div`
@@ -206,11 +210,24 @@ const ListWrapper = styled.div`
 
 const CardWrapper = styled.div`
     margin : 0 0 70px 0;
+    width : 30%;
+
+    @media (min-width: 990px) and (max-width: 1439px) {
+        width : 30%;
+    }
+
+    @media (max-width: 989px) {
+        width : 100%;
+    }
 `
 
 const CardTitle = styled.p`
     font-size : 36px;
     font-weight : 600;
+
+    @media (min-width: 1280px) and (max-width: 1600px) {
+        font-size : 24px;
+    }
 `
 
 const CardContents = styled.div`
@@ -218,6 +235,10 @@ const CardContents = styled.div`
 
     & > ul > li {
         font-size : 18px;
+
+        @media (min-width: 1280px) and (max-width: 1600px) {
+            font-size : 14px;
+        }
     }
 `
 
@@ -225,10 +246,14 @@ const ViewBtn = styled.div`
     font-size : 18px;
     margin : 50px 0 0 0;
     cursor : pointer;
+
+    @media (min-width: 1280px) and (max-width: 1600px) {
+        font-size : 14px;
+    }
 `
 
 const ThirdSection = styled.div`
-    margin : 199px 245px 186px;
+    margin : 199px 12% 186px;
 `
 
 const ThirdTitle = styled.p`
@@ -255,7 +280,7 @@ const CommunityCard = styled.div`
     background-color : #eee;
     margin : 0 0 30px 0;
     
-    @media (min-width: 990px) and (max-width: 1490px) {
+    @media (min-width: 990px) and (max-width: 1439px) {
         width : 48%;
     }
 
@@ -293,7 +318,7 @@ const FourthSection = styled.div`
 `
 
 const FourthWrapper = styled.div`
-    margin : 0 245px;
+    margin : 0 12%;
     padding : 332px 0 0 0;
 `
 
@@ -321,7 +346,7 @@ const FourthBtn = styled.div`
 `
 
 const FifthSection = styled.div`
-    margin : 0 245px;
+    margin : 0 12%;
 `
 
 const FifthSectionWrapper = styled.div`
@@ -365,13 +390,13 @@ const FifthSectonCard = styled.div`
     background-color : #eee;
     margin : 0 0 20px 0;
 
-    @media (min-width: 990px) and (max-width: 1490px) {
+    @media (min-width: 990px) and (max-width: 1439px) {
         width : 48%;
     }
 `
 
 const SixthSection = styled.div`
-    margin : 0 245px 260px;
+    margin : 0 12% 260px;
 `
 
 const SixthTitle = styled.p`
@@ -395,7 +420,7 @@ const SixthSectionCard = styled.div`
     margin : 0 0 20px 0;
     position : relative;
 
-    @media (min-width: 990px) and (max-width: 1490px) {
+    @media (min-width: 990px) and (max-width: 1439px) {
         width : 48%;
     }
 `
