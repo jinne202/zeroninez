@@ -25,6 +25,8 @@ const RightSide = () => {
     const [isCheckBudget, setIsCheckBudget] = useState([]);
     const [budgetList, setBudgetList] = useState([]);
 
+    const [file, setFile] = useState(null);
+
     const [characterCount, setCharacterCount] = useState(0);
 
     const [companyCheck, setCompanyCheck] = useState(false);
@@ -161,11 +163,10 @@ const RightSide = () => {
         setProjectExplain(e.target.value);
     }, []);
 
-    var files = null;
     const handleFileUpload = useCallback((e) => {
-        files = e.target.files;
-        document.getElementById('fileName').innerHTML = "zzz";
-    }, [files]);
+        setFile(e.target.files[0]);
+        document.getElementById('fileName').innerHTML = file.name;
+    }, []);
 
     const maxLimit = characterCount > 300;
 
@@ -193,8 +194,8 @@ const RightSide = () => {
                 emailInfo,
                 individualCheck,
             },
-            file : null
-        }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck, isCheckBudget]);
+            file : file
+        }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck, isCheckBudget, file]);
     })
 
     return (
@@ -233,7 +234,7 @@ const RightSide = () => {
                     <PartThreeTitle id = "fileName">프로젝트의 이해를 돕는 자료를 보내주세요.</PartThreeTitle>
                     <FileLabel>
                         <FileIcon><AiOutlinePaperClip/></FileIcon>
-                        <FileInput type = "file" onChange={handleFileUpload} multiple/>
+                        <FileInput type = "file" onChange={handleFileUpload}/>
                     </FileLabel>
                     </PartThreeTextWrapper>
                     <PartThreeDesc>* 100mb이상의 내용은 zeroninez_team@naver.com 으로 메일링해주세요.</PartThreeDesc>
