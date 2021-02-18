@@ -14,7 +14,7 @@ const Checkbox = ({ id, type, name, handleClick, isChecked }) => {
           checked={isChecked}
         />
         <CheckBoxIcon checked={isChecked}>
-          <svg width="15px" height="12px" viewbox="0 0 14 12">
+          <svg width="15px" height="12px" viewBox="0 0 14 12">
           <polyline points="0.5 6 4.5 9 11.5 1"></polyline>
           </svg>
         </CheckBoxIcon>

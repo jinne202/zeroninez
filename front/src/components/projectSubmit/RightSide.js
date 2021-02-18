@@ -75,7 +75,7 @@ const RightSide = () => {
 
     const handleClickBudget = e => {
         const { id, checked } = e.target;
-        setIsCheckBudget([isCheckBudget, id]);
+        setIsCheckBudget([id]);
         if (!checked) {
           setIsCheckBudget(isCheckBudget.filter(item => item !== id));
         }
@@ -174,7 +174,7 @@ const RightSide = () => {
         if (isCheckBudget.length < 1) {
             return ;
         }
-        console.log(isCheckBudget)
+        console.log(isCheckBudget, isCheck)
         return dispatch({
             type : PROJECT_SUBMIT_REQUEST,
             data : {
@@ -332,7 +332,7 @@ const TextArea = styled.textarea`
     color : white;
 `
 
-const CountText = styled.p`
+const CountText = styled.div`
     font-size : 14px;
     color : #AEAEAE;
     padding : 2px 0 0 0;

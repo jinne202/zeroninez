@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import RightNav from './RightNav';
+import Link from 'next/link'
+import { useRouter } from "next/router";
 
 import logo from '../../../static/img/logo.png';
 
 const AppLayout = () => {
 
     const [open, setOpen] = useState(false);
-
+    const router = useRouter();
     console.log(open);
 
     return (
         <>
         <LayoutWrapper>
-            <LogoWrapper>
-                <img src={logo} alt="로고"/>
-            </LogoWrapper>
+            <Link href="/">
+                <LogoWrapper>
+                    <img src={logo} alt="로고"/>
+                </LogoWrapper>
+            </Link>
             <MenuBtn open={open} onClick={() => setOpen(!open)}>
-                <HamburgerMenu open={open}></HamburgerMenu>
+                <HamburgerMenu active={router.pathname == "/projectSubmit" ? true : false} open={open}></HamburgerMenu>
             </MenuBtn>
         </LayoutWrapper>
         <RightNav open={open}/>
@@ -35,6 +39,7 @@ const LayoutWrapper = styled.div`
 
 const LogoWrapper = styled.div`
     margin : 45px 0 0 54px;
+    cursor : pointer;
 `
 
 const MenuBtn = styled.div`
@@ -98,7 +103,35 @@ const HamburgerMenu = styled.div`
             background : white;
         `}
     }
+
+    ${props => props.active === true &&
+        css`
+            background : white;
+            &:after {
+                background : white;
+
+                ${props =>
+                    props.open === true &&
+                    css`
+                        background: black;
+                `}
+            }
+            &:before {
+                background : white;
+
+                ${props =>
+                    props.open === true &&
+                    css`
+                        background: black;
+                `}
+            }
+            ${props =>
+                props.open === true &&
+                css`
+                    background: transparent;
+            `}
+        `
+    }
 `
 
 export default AppLayout;
-

@@ -1,14 +1,23 @@
 import React from 'react';
+import Link from 'next/link';
+import { useRouter } from "next/router";
 import styled, { css } from 'styled-components';
 
 const RightNav = ({ open }) => {
+
+    const router = useRouter();
+
   return (
-    <RightNavWrapper open={open}>
+    <RightNavWrapper active={router.pathname == "/projectSubmit" ? true : false} open={open}>
         <ul>
-            <li>프로젝트 (5)</li>
+            <Link href="/project">
+                <li>프로젝트 (5)</li>
+            </Link>
             <li>제로나인즈 스토리</li>
             <li>연락처 및 오시는 길</li>
-            <li>프로젝트 의뢰하기</li>
+            <Link href="/projectSubmit">
+                <li>프로젝트 의뢰하기</li>
+            </Link>
             <li>입사지원</li>
         </ul>
     </RightNavWrapper>
@@ -45,6 +54,13 @@ const RightNavWrapper = styled.div`
 
         cursor : pointer;
     }
+
+    ${props => props.active === true &&
+        css`
+            background : #eee;
+        `
+    }
 `
+
 
 export default RightNav;
