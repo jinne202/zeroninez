@@ -161,6 +161,12 @@ const RightSide = () => {
         setProjectExplain(e.target.value);
     }, []);
 
+    let files = null;
+
+    const handleFileUpload = useCallback((e) => {
+        files = e.target.files;
+    }, [files]);
+
     const maxLimit = characterCount > 300;
 
     const handleSubmit = useCallback((e) => {
@@ -186,7 +192,8 @@ const RightSide = () => {
                 positionInfo,
                 emailInfo,
                 individualCheck,
-            }
+            },
+            file : null
         }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck, isCheckBudget]);
     })
 
@@ -226,7 +233,7 @@ const RightSide = () => {
                     <PartThreeTitle>프로젝트의 이해를 돕는 자료를 보내주세요.</PartThreeTitle>
                     <FileLabel>
                         <FileIcon><AiOutlinePaperClip/></FileIcon>
-                        <FileInput type = "file"/>
+                        <FileInput type = "file" onChange={handleFileUpload} multiple/>
                     </FileLabel>
                     </PartThreeTextWrapper>
                     <PartThreeDesc>* 100mb이상의 내용은 zeroninez_team@naver.com 으로 메일링해주세요.</PartThreeDesc>
