@@ -32,14 +32,14 @@ const AppLayout = () => {
 const LayoutWrapper = styled.div`
     display : flex;
     justify-content : space-between;
-    position : fixed;
     width : 100%;
-    z-index : 10;
 `
 
 const LogoWrapper = styled.div`
-    margin : 45px 0 0 54px;
+    padding : 45px 0 0 54px;
     cursor : pointer;
+    position : fixed;
+    z-index : 10;
 `
 
 const MenuBtn = styled.div`
@@ -47,6 +47,9 @@ const MenuBtn = styled.div`
     height: 60px;
     cursor: pointer;
     margin : 55px 34px 0 0;
+    position : fixed;
+    z-index : 10;
+    right : 34px;
 `
 
 const HamburgerMenu = styled.div`
