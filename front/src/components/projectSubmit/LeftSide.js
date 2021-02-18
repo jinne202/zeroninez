@@ -8,6 +8,8 @@ import SNSBehance from '../../../static/img/SNSBehance.png';
 import SNSMedium from '../../../static/img/SNSMedium.png';
 import SNSTwitter from '../../../static/img/SNSTwitter.png';
 
+import { AiFillFacebook, AiFillInstagram, AiFillYoutube, AiFillBehanceSquare, AiFillMediumSquare, AiFillTwitterSquare } from "react-icons/ai";
+
 
 const LeftSide = () => {
     return (
@@ -21,12 +23,24 @@ const LeftSide = () => {
             <SNSSection>
                 <SNSTitle>FOLLOW</SNSTitle>
                 <SNSDesc>
-                    <img src={SNSFacebook} alt="페이스북"/>
-                    <img src={SNSInstagran} alt="인스타그램"/>
-                    <img src={SNSYoutube} alt="유튜브"/>
-                    <img src={SNSBehance} alt="비핸스"/>
-                    <img src={SNSMedium} alt="미디엄"/>
-                    <img src={SNSTwitter} alt="트위터"/>
+                    <IconWrapper>
+                        <AiFillFacebook/>
+                    </IconWrapper>
+                    <IconWrapper>
+                        <AiFillInstagram/>
+                    </IconWrapper>
+                    <IconWrapper>
+                        <AiFillYoutube/>
+                    </IconWrapper>
+                    <IconWrapper>
+                        <AiFillBehanceSquare/>
+                    </IconWrapper>
+                    <IconWrapper>
+                        <AiFillMediumSquare/>
+                    </IconWrapper>
+                    <IconWrapper>
+                        <AiFillTwitterSquare/>
+                    </IconWrapper>
                 </SNSDesc>
             </SNSSection>
         </LeftSideWrapper>
@@ -69,15 +83,18 @@ const SNSTitle = styled.p`
 
 const SNSDesc = styled.div`
     width : 210px;
+`
 
-    & > img {
-        margin : 0 40px 30px 0;
-        opacity : 0.3;
-        cursor : pointer
+const IconWrapper = styled.div`
+    margin : 0 40px 30px 0;
+    opacity : 0.7;
+    cursor : pointer;
+    font-size : 30px;
+    color : white;
+    display : inline-block;
 
-        &:hover {
-            opacity : 1;
-        }
+    &:hover {
+        opacity : 1;
     }
 `
 

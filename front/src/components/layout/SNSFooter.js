@@ -1,24 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SNSFacebook from '../../../static/img/SNSFacebook.png'
-import SNSInstagran from '../../../static/img/SNSInstagram.png'
-import SNSYoutube from '../../../static/img/SNSYoutube.png'
+import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 
 const SNSFooter = () => {
     return (
         <SNSFooterWrapper>
             <SNSWrapper>
                 <SNSList>
-                    <img src={SNSFacebook} alt="페이스북"/>
+                    <AiFillFacebook/>
                     <p>페이스북</p>
                 </SNSList>
                 <SNSList>
-                    <img src={SNSInstagran} alt="인스타그램"/>
+                    <AiFillInstagram/>
                     <p>인스타그램</p>
                 </SNSList>
                 <SNSList>
-                    <img src={SNSYoutube} alt="유튜브"/>
+                    <AiFillYoutube/>
                     <p>유튜브</p>
                 </SNSList>
             </SNSWrapper>
@@ -53,6 +51,8 @@ const SNSWrapper = styled.div`
 const SNSList = styled.div`
     display : flex;
     margin : 0 40px 0 0;
+    font-size : 30px;
+    color : black;
 
     & > p {
         font-size : 18px;

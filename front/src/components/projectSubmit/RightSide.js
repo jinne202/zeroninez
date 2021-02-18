@@ -21,6 +21,8 @@ const RightSide = () => {
     const [visualList, setVisualList] = useState([]);
     const [devList, setDevList] = useState([]);
     const [eduList, setEduList] = useState([]);
+
+    const [isCheckBudget, setIsCheckBudget] = useState([]);
     const [budgetList, setBudgetList] = useState([]);
 
     const [characterCount, setCharacterCount] = useState(0);
@@ -68,6 +70,14 @@ const RightSide = () => {
         setIsCheck([...isCheck, id]);
         if (!checked) {
           setIsCheck(isCheck.filter(item => item !== id));
+        }
+    };
+
+    const handleClickBudget = e => {
+        const { id, checked } = e.target;
+        setIsCheckBudget([isCheckBudget, id]);
+        if (!checked) {
+          setIsCheckBudget(isCheckBudget.filter(item => item !== id));
         }
     };
 
@@ -136,11 +146,11 @@ const RightSide = () => {
           <>
             <Checkbox
               key={id}
-              type="checkbox"
+              type="radio"
               name={name}
               id={id}
-              handleClick={handleClick}
-              isChecked={isCheck.includes(id)}
+              handleClick={handleClickBudget}
+              isChecked={isCheckBudget.includes(id)}
             />
           </>
         );
@@ -155,25 +165,29 @@ const RightSide = () => {
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
-        if (isCheck.length < 2) {
+        if (isCheck.length < 1) {
             return;
         }
         if (!individualCheck) {
             return ;
         }
-        console.log(isCheck + "ischeck"+ projectExplain + "projectex" + teamInfo + "teaminfo" + companyCheck + "handleposition" + positionInfo + emailInfo + individualCheck) + isCheck.length
+        if (isCheckBudget.length < 1) {
+            return ;
+        }
+        console.log(isCheckBudget)
         return dispatch({
             type : PROJECT_SUBMIT_REQUEST,
             data : {
                 isCheck,
                 projectExplain,
+                isCheckBudget,
                 teamInfo,
                 companyCheck,
                 positionInfo,
                 emailInfo,
                 individualCheck,
             }
-        }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck]);
+        }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck, isCheckBudget]);
     })
 
     return (
