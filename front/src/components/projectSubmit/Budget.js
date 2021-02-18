@@ -1,6 +1,6 @@
 export const Budget = [
     {
-        id : "500",
+        id : "500미만",
         name : "500미만"
     },
     {
@@ -20,7 +20,7 @@ export const Budget = [
         name : "10,000이상",
     },
     {
-        id : "none",
+        id : "미정",
         name : "미정"
     }
 ]

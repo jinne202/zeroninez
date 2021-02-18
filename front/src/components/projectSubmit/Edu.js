@@ -1,6 +1,6 @@
 export const Edu = [
     {
-        id : "10",
+        id : "Design-Thinking",
         name : "Design-Thinking"
     }
 ]

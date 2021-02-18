@@ -1,18 +1,18 @@
 export const Consult = [
     {
-        id : "0", 
+        id : "Service Design", 
         name : "Service Design"
     },
     {
-        id : "1",
+        id : "UX/UI Design",
         name : "UX/UI Design"
     },
     {
-        id : "2",
+        id : "Brand Design",
         name : "Brand Design"
     },
     {
-        id : "3",
+        id : "PR / Marketing",
         name : "PR / Marketing"
     }
 ]

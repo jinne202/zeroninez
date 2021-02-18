@@ -1,18 +1,18 @@
 export const Visual = [
     {
-        id : "4", 
+        id : "Identity", 
         name : "Identity"
     },
     {
-        id : "5",
+        id : "Illustration",
         name : "Illustration"
     },
     {
-        id : "6",
+        id : "Editorial Print",
         name : "Editorial Print"
     },
     {
-        id : "7",
+        id : "Info-Visual",
         name : "Info-Visual"
     }
 ]

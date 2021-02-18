@@ -2,6 +2,7 @@ import { all, fork } from 'redux-saga/effects';
 import axios from 'axios';
 
 import scheduleSaga from './scheduleSaga';
+import projectSaga from './projectSaga';
 
 axios.defaults.baseURL = 'http://localhost:8080';
 axios.interceptors.request.use(
@@ -18,6 +19,7 @@ axios.interceptors.request.use(
 
 export default function* rootSaga() {
   yield all([
-    fork(scheduleSaga)
+    fork(scheduleSaga),
+    fork(projectSaga),
   ]);
 }

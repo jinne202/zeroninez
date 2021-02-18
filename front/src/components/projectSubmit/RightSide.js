@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Checkbox from './Checkbox';
 import CheckboxSquare from './CheckboxSquare';
@@ -7,10 +7,14 @@ import { Visual } from './Visual';
 import { Dev } from './Dev';
 import { Edu } from './Edu';
 import { Budget } from './Budget';
+import useInput from '../../hooks/useInput';
+import { useDispatch, useSelector } from 'react-redux';
+import { PROJECT_SUBMIT_REQUEST } from '../../reducers/projectSubmitReducer';
 
 import { AiOutlinePaperClip } from "react-icons/ai";
 
 const RightSide = () => {
+    const dispatch = useDispatch();
 
     const [isCheck, setIsCheck] = useState([]);
     const [consultList, setConsultList] = useState([]);
@@ -23,6 +27,13 @@ const RightSide = () => {
 
     const [companyCheck, setCompanyCheck] = useState(false);
     const [individualCheck, setIndividualCheck] = useState(false);
+
+    const [projectExplain, setProjectExplain] = useState('');
+    const [projectFile, setProjectFile] = useState('');
+
+    const [teamInfo, handleTeamInfo] = useInput('');
+    const [positionInfo, handlePositionInfo] = useInput('');
+    const [emailInfo, handleEmailInfo] = useInput('');
 
     const onChangeCompnay = (e) => {
         setCompanyCheck(e.target.checked);
@@ -59,8 +70,6 @@ const RightSide = () => {
           setIsCheck(isCheck.filter(item => item !== id));
         }
     };
-    
-    console.log(isCheck);
 
     const consult = consultList.map(({ id, name }) => {
         return (
@@ -137,15 +146,39 @@ const RightSide = () => {
         );
     });
 
-    const handleCharacterCount = (e) => {
+    const handleCharacterCount = useCallback((e) => {
         setCharacterCount(e.target.value.length)
-    }
+        setProjectExplain(e.target.value);
+    }, []);
 
     const maxLimit = characterCount > 300;
 
+    const handleSubmit = useCallback((e) => {
+        e.preventDefault();
+        if (isCheck.length < 2) {
+            return;
+        }
+        if (!individualCheck) {
+            return ;
+        }
+        console.log(isCheck + "ischeck"+ projectExplain + "projectex" + teamInfo + "teaminfo" + companyCheck + "handleposition" + positionInfo + emailInfo + individualCheck) + isCheck.length
+        return dispatch({
+            type : PROJECT_SUBMIT_REQUEST,
+            data : {
+                isCheck,
+                projectExplain,
+                teamInfo,
+                companyCheck,
+                positionInfo,
+                emailInfo,
+                individualCheck,
+            }
+        }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck]);
+    })
+
     return (
         <RightSideWrapper>
-            <FormWrapper>
+            <FormWrapper onSubmit={handleSubmit}>
                 <PartOne>
                     <Title>프로젝트의 분야를 선택해 주세요. <span>* 최소한 1개 이상 선택해 주세요. 중복선택도 가능합니다.</span></Title>
                     <CheckboxWrapper>
@@ -172,7 +205,7 @@ const RightSide = () => {
                         <Title>프로젝트에 대한 간단히 설명해주세요.</Title>
                         <CountText>{maxLimit ? <CountLimit>{characterCount}</CountLimit> : <CountNotLimit>{characterCount}</CountNotLimit>} / 300자</CountText>
                     </PartTwoTextWrapper>
-                    <TextArea type="text" onChange={handleCharacterCount}></TextArea>
+                    <TextArea type="text" value={projectExplain} onChange={handleCharacterCount} required></TextArea>
                 </PartTwo>
                 <PartThree>
                     <PartThreeTextWrapper>
@@ -193,18 +226,18 @@ const RightSide = () => {
                     <InputContainer>
                         <InputWrapper>
                             <InputTitle>팀 . 조직 or 소속명</InputTitle>
-                            <PartFiveInput></PartFiveInput>
+                            <PartFiveInput value={teamInfo} onChange={handleTeamInfo} required></PartFiveInput>
                         </InputWrapper>
                         <SquareCheckboxWrapper>
                             <CheckboxSquare title="사회적협동조합 , (예비)사회적기업, 소셜벤처 및 사회적가치를 실현하는 조직입니다." onChange={onChangeCompnay} checked={companyCheck}/>
                         </SquareCheckboxWrapper>
                         <InputWrapperMargin>
                             <InputTitle>담당자 성명과 직함</InputTitle>
-                            <PartFiveInput placeholder="ex. 김이박_매니저"></PartFiveInput>
+                            <PartFiveInput placeholder="ex. 김이박_매니저" value={positionInfo} onChange={handlePositionInfo} required></PartFiveInput>
                         </InputWrapperMargin>
                         <InputWrapperMargin>
                             <InputTitle>이메일 . 전화번호</InputTitle>
-                            <PartFiveInput placeholder="ex. abc@xyz.com_029871234"></PartFiveInput>
+                            <PartFiveInput placeholder="ex. abc@xyz.com_029871234" value={emailInfo} onChange={handleEmailInfo} required></PartFiveInput>
                         </InputWrapperMargin>
                         <IndividaulWrapper>
                         <SquareCheckboxWrapper>
@@ -371,6 +404,7 @@ const PartFiveInput = styled.input`
     outline : none;
     font-size : 18px;
     width : 400px;
+    color : white;
 
     &:focus {
         color : white;

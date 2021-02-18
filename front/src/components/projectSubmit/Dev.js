@@ -1,10 +1,10 @@
 export const Dev = [
     {
-        id : "8", 
+        id : "Web / App", 
         name : "Web / App"
     },
     {
-        id : "9",
+        id : "Backend",
         name : "Backend"
     }
 ]

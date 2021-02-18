@@ -432,6 +432,10 @@ const SixthCardText = styled.p`
     line-height : 140%;
     top : 30px;
     left : 25px;
+
+    @media (min-width: 1280px) and (max-width: 1600px) {
+        font-size : 18px;
+    }
 `
 
 const SixthMapBtn = styled.p`
@@ -441,6 +445,10 @@ const SixthMapBtn = styled.p`
     left : 25px;
     font-size : 24px;
     font-weight : 600;
+
+    @media (min-width: 1280px) and (max-width: 1600px) {
+        font-size : 18px;
+    }
 `
 
 export default MainPage;
