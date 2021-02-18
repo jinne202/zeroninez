@@ -165,6 +165,7 @@ const RightSide = () => {
 
     const handleFileUpload = useCallback((e) => {
         files = e.target.files;
+        if (files.length > 0) {}
     }, [files]);
 
     const maxLimit = characterCount > 300;
