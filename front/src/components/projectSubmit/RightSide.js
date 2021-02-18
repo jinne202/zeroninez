@@ -165,7 +165,7 @@ const RightSide = () => {
 
     const handleFileUpload = useCallback((e) => {
         setFile(e.target.files[0]);
-        document.getElementById('fileName').innerHTML = file.name;
+        document.getElementById('fileName').innerHTML = e.target.files[0].name;
     }, []);
 
     const maxLimit = characterCount > 300;
