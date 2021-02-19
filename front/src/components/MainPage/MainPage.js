@@ -2,6 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import SNSFooter from '../layout/SNSFooter';
 
+const shapeOne = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 0L10.5201 6.21592L12.698 0.370827L11.5218 6.49656L15.1958 1.45581L12.4105 7.03705L17.3084 3.17447L13.1205 7.79728L18.8789 5.39935L13.5991 8.72087L19.7908 7.96544L13.8108 9.73934L19.9767 10.6824L13.7398 10.7771L19.4226 13.3488L13.3914 11.7573L18.1697 15.7668L12.7915 12.6071L16.3109 17.7571L11.9846 13.2636L13.984 19.1721L11.0305 13.678L11.3617 19.9069L10 13.8197L8.63833 19.9069L8.96947 13.678L6.01599 19.1721L8.01537 13.2636L3.68912 17.7571L7.20846 12.6071L1.8303 15.7668L6.60858 11.7573L0.577391 13.3488L6.26023 10.7771L0.0233126 10.6824L6.18924 9.73934L0.209159 7.96544L6.40088 8.72087L1.12115 5.39935L6.87945 7.79728L2.69164 3.17447L7.58946 7.03705L4.80416 1.45581L8.47824 6.49656L7.30203 0.370827L9.47989 6.21592L10 0Z" fill="#00FFB2"/>
+</svg>
+
+const shapeTwo = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 0L12.0506 7.94939L20 10L12.0506 12.0506L10 20L7.94939 12.0506L0 10L7.94939 7.94939L10 0Z" fill="#00FFB2"/>
+</svg>
+
+
 const MainPage = () => {
     return (
         <MainPageWrapper>
@@ -14,7 +23,8 @@ const MainPage = () => {
                     열정을 담아 거듭나는 모든 <br/>크리에이터를 응원합니다.
                 </SubText>
                 <NumberAnimation>
-                    0 - 9
+                    <Number>0<span>{shapeTwo}</span></Number>
+                    <Number>9<span>{shapeOne}</span></Number>
                 </NumberAnimation>
             </TextWrapper>
         </MainSection>
@@ -174,6 +184,19 @@ const NumberAnimation = styled.div`
     font-size : 24px;
     font-weight : 700;
     margin : 146px 0 0 0;
+    display : flex
+`
+
+const Number = styled.div`
+    margin-right : 20px;
+    position : relative;
+
+    & > span {
+        position : absolute;
+        bottom : -8px;
+        right : -13px;
+        z-index : -1;
+    }
 `
 
 const SecondSection = styled.div`
@@ -450,5 +473,6 @@ const SixthMapBtn = styled.p`
         font-size : 18px;
     }
 `
+
 
 export default MainPage;

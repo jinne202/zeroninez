@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 
 import logo from '../../../static/img/logo.png';
+import whiteLogo from '../../../static/img/logoWhite.png';
 
 const AppLayout = () => {
 
@@ -12,12 +13,14 @@ const AppLayout = () => {
     const router = useRouter();
     console.log(open);
 
+    const logoClolor = router.pathname == "/projectSubmit" ? whiteLogo : logo
+
     return (
         <>
         <LayoutWrapper>
             <Link href="/">
                 <LogoWrapper>
-                    <img src={logo} alt="로고"/>
+                    <img src={logoClolor} alt="로고"/>
                 </LogoWrapper>
             </Link>
             <MenuBtn open={open} onClick={() => setOpen(!open)}>
@@ -39,7 +42,12 @@ const LogoWrapper = styled.div`
     padding : 45px 0 0 54px;
     cursor : pointer;
     position : fixed;
+    width : 120px;
     z-index : 10;
+
+    & > img {
+        width : 100%;
+    }
 `
 
 const MenuBtn = styled.div`

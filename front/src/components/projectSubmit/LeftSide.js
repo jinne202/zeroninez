@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SNSFacebook from '../../../static/img/SNSFacebook.png';
-import SNSInstagran from '../../../static/img/SNSInstagram.png';
-import SNSYoutube from '../../../static/img/SNSYoutube.png';
-import SNSBehance from '../../../static/img/SNSBehance.png';
-import SNSMedium from '../../../static/img/SNSMedium.png';
-import SNSTwitter from '../../../static/img/SNSTwitter.png';
-
 import { AiFillFacebook, AiFillInstagram, AiFillYoutube, AiFillBehanceSquare, AiFillMediumSquare, AiFillTwitterSquare } from "react-icons/ai";
 
 

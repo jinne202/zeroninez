@@ -18,7 +18,6 @@ const RightNav = ({ open }) => {
             <Link href="/projectSubmit">
                 <li>프로젝트 의뢰하기</li>
             </Link>
-            <li>입사지원</li>
         </ul>
     </RightNavWrapper>
   )
