@@ -25,6 +25,10 @@ const ProjectSubmitWrapper = styled.div`
     @media (min-width: 1280px) and (max-width: 1600px) {
         padding : 170px 0 140px 0;
     }
+
+    @media (max-width : 399px) {
+        padding : 150px 0 0 0;
+    }
 `
 
 const ProjectSubmitInnerContainer = styled.div`

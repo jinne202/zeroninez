@@ -76,12 +76,16 @@ const FooterSubTitle = styled.p`
     color : #00FFB2;
     line-height : 65px;
 
+    & > br {
+        display : none !important;
+    }
+
     @media (max-width: 1440px) {
         font-size : 30px;
     }
 
     @media (min-width: 631px) and (max-width: 1440px) {
-        font-size : 18px;
+        font-size : 24px;
     }
 
     @media (max-width : 630px) {
@@ -101,7 +105,7 @@ const FooterButton = styled.div`
     cursor : pointer;
 
     @media (min-width: 1025px) and (max-width: 1440px) {
-        margin : 0 0 0 0;
+        margin : 0 0 0 100px;
 
         & > svg {
             width : 250px;
@@ -111,6 +115,11 @@ const FooterButton = styled.div`
 
     @media (min-width: 631px) and (max-width: 1024px) {
         margin : 10vh 0 0 0;
+
+        & > svg {
+            width : 250px;
+            height : 250px;
+        }
     }
 
     @media (max-width: 630px) {

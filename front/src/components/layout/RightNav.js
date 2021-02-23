@@ -67,6 +67,31 @@ const RightNavWrapper = styled.div`
             background : #eee;
         `
     }
+
+    @media (max-width : 399px) {
+        position : fixed;
+        height : 100vh;
+        width : 100%;
+        display : block;
+        background : #2E2E2E;
+        right : -100%;
+        top : 0;
+        z-index : 5;
+        transition: all 0.4s;
+
+        ${props =>
+            props.open === true &&
+            css`
+                right : 0;
+        `}
+
+        
+        ${props => props.active === true &&
+            css`
+                background : #eee;
+            `
+        }
+    }
 `
 
 

@@ -289,6 +289,10 @@ const RightSideWrapper = styled.div`
 
 const FormWrapper = styled.form`
     width : 68%;
+
+    @media (max-width : 399px) {
+        width : 100%;
+    }
 `
 
 const PartOne = styled.div`
@@ -298,9 +302,20 @@ const Title = styled.p`
     font-size : 18px;
     color : #00FFB2;
     margin : 0 0 0 30px;
+
     & > span {
         font-size : 12px;
         margin : 0 0 0 15px;
+    }
+
+    @media (max-width : 399px) {
+        margin : 0 0 0 0;
+
+        & > span {
+            display : block;
+            margin : 0;
+            font-size : 10px;
+        }
     }
 `
 
@@ -339,7 +354,7 @@ const TextArea = styled.textarea`
     color : white;
 `
 
-const CountText = styled.p`
+const CountText = styled.div`
     font-size : 14px;
     color : #AEAEAE;
     padding : 2px 0 0 0;

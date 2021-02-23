@@ -43,6 +43,11 @@ const LeftSide = () => {
 const LeftSideWrapper = styled.div`
     color : white;
     position : fixed;
+
+    
+    @media (max-width : 399px) {
+        position : relative;
+    }
 `
 
 const Title = styled.p`

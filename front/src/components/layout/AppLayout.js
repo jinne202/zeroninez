@@ -55,7 +55,7 @@ const LogoWrapper = styled.div`
     }
 
     @media (max-width : 399px) {
-        margin : 10 0 0 -10px ;
+        margin : 10px 0 0 -10px;
         width : 100px;
     }
 `
@@ -69,9 +69,13 @@ const MenuBtn = styled.div`
     z-index : 10;
     right : 34px;
 
-    @media (max-width: 630px) {
+    @media (min-width: 400px) and (max-width: 630px) {
         margin : 55px 5px 0 0;
         right : 5px;
+    }
+
+    @media (max-width : 399px) {
+        margin : 55px 0 0 0;
     }
 `
 
@@ -82,7 +86,7 @@ const HamburgerMenu = styled.div`
     transition: all 0ms 300ms;
     width: 25px;
     height: 2px;
-    margin : 0 0 0 15px;
+    margin : 0 0 0 23px;
 
     ${props =>
     props.open === true &&
