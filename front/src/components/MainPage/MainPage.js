@@ -319,6 +319,10 @@ const ViewBtn = styled.div`
 
 const ThirdSection = styled.div`
     margin : 199px 12% 186px;
+
+    @media (max-width : 399px) {
+        margin : 0 8% 0 ;
+    }
 `
 
 const ThirdTitle = styled.p`

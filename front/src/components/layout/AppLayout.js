@@ -55,7 +55,7 @@ const LogoWrapper = styled.div`
     }
 
     @media (max-width : 399px) {
-        margin : 10px 0 0 -10px;
+        margin : 10px 0 0 -23px;
         width : 100px;
     }
 `
@@ -86,7 +86,7 @@ const HamburgerMenu = styled.div`
     transition: all 0ms 300ms;
     width: 25px;
     height: 2px;
-    margin : 0 0 0 23px;
+    margin : 0 0 0 38px;
 
     ${props =>
     props.open === true &&
