@@ -14,7 +14,7 @@ const Footer = () => {
                         LET’S TALK <br/> YOUR CREATIVITY
                     </FooterTitle>
                     <FooterSubTitle>
-                        가치있는 생각들을 응원합니다. 함께 해결해요.
+                        가치있는 생각들을 응원합니다.<br/> 함께 해결해요.
                     </FooterSubTitle>
                 </FooterText>
                 <FooterButton>
@@ -40,9 +40,14 @@ const FooterWrapper = styled.div`
 `
 
 const FooterInnerContainer = styled.div`
-    padding : 300px 0 0 0;
+    padding : 35vh 0 0 0;
     margin : 0 12%;
     display : flex;
+
+    @media (max-width: 1080px) {
+        display : block;
+        padding : 23vh 0 0 0;
+    }
 `
 
 const FooterTitle = styled.p`
@@ -53,8 +58,16 @@ const FooterTitle = styled.p`
     color : #00FFB2;
     margin : 0;
 
-    @media (min-width: 990px) and (max-width: 1440px) {
+    @media (max-width: 1440px) {
         font-size : 100px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1440px) {
+        font-size : 80px;
+    }
+
+    @media (max-width : 630px) {
+        font-size : 40px;
     }
 `
 
@@ -63,8 +76,18 @@ const FooterSubTitle = styled.p`
     color : #00FFB2;
     line-height : 65px;
 
-    @media (min-width: 990px) and (max-width: 1440px) {
+    @media (max-width: 1440px) {
         font-size : 30px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1440px) {
+        font-size : 18px;
+    }
+
+    @media (max-width : 630px) {
+        font-size : 21px;
+        line-height : 28px;
+        margin : 30px 0 0 0;
     }
 `
 
@@ -77,10 +100,24 @@ const FooterButton = styled.div`
     position : relative;
     cursor : pointer;
 
-    @media (min-width: 990px) and (max-width: 1440px) {
+    @media (min-width: 1025px) and (max-width: 1440px) {
+        margin : 0 0 0 0;
+
         & > svg {
             width : 250px;
             height : 250px;
+        }
+    }
+
+    @media (min-width: 631px) and (max-width: 1024px) {
+        margin : 10vh 0 0 0;
+    }
+
+    @media (max-width: 630px) {
+        margin : 10vh 0 0 0;
+        & > svg {
+            width : 150px;
+            height : 150px;
         }
     }
 `
@@ -93,11 +130,18 @@ const BtnText = styled.p`
     line-height : 41px;
     margin : 0;
 
-    @media (min-width: 990px) and (max-width: 1440px) {
+    @media (max-width: 1440px) {
         top : 90px;
         left : 80px;
         font-size : 24px;
         line-height : 30px;
+    }
+
+    @media (max-width: 630px) {
+        top : 48px;
+        left : 43px;
+        font-size : 18px;
+        line-height : 24px;
     }
 
 `
@@ -106,7 +150,13 @@ const CopyRightSection = styled.p`
     text-align : center;
     font-size : 14px;
     color : white;
-    margin : 160px 0 0 0;
+    position : absolute;
+    bottom : 30px;
+    width : 100%;
+
+    @media (max-width: 630px) {
+        font-size :10px
+    }
 `
 
 export default Footer;

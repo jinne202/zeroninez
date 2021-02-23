@@ -26,10 +26,10 @@ const RightNav = ({ open }) => {
 const RightNavWrapper = styled.div`
     position : fixed;
     height : 100vh;
-    width : 800px;
+    width : 60%;
     display : block;
     background : #2E2E2E;
-    right : -800px;
+    right : -60%;
     top : 0;
     z-index : 5;
     transition: all 0.4s;
@@ -43,6 +43,10 @@ const RightNavWrapper = styled.div`
 
     & > ul {
         margin : 230px 0 0 80px;
+    
+        @media (max-width: 768px) {
+            margin : 230px 0 0 50px;
+        }
     }
 
     & > ul > li {
@@ -52,6 +56,10 @@ const RightNavWrapper = styled.div`
         color : #00FFB2;
 
         cursor : pointer;
+
+        @media (max-width: 399px) {
+            font-size : 24px;
+        }
     }
 
     ${props => props.active === true &&

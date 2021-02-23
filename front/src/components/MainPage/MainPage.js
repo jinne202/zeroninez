@@ -86,7 +86,7 @@ const MainPage = () => {
                 </CommunityCard>
             </ThirdCardListWrapper>
             <ThirdParagraph>
-            제로나인즈는 더 나은 세상을 만들기 위해 노력하는 수많은 사람들과 함께 성장해요.<br/>소셜섹터 실무자의 역량을 높이고, 사회적 가치를 확대하는 자체 플랫폼을 기획하고 운영하고 있습니다.
+            제로나인즈는 더 나은 세상을 만들기 위해 노력하는 수많은 사람들과 함께 성장해요.<br/> 소셜섹터 실무자의 역량을 높이고, 사회적 가치를 확대하는 자체 플랫폼을 기획하고 운영하고 있습니다.
             </ThirdParagraph>
         </ThirdSection>
         <FourthSection>
@@ -153,7 +153,7 @@ const MainPageWrapper = styled.div`
     z-index : 2;
     position : relative;
     background-color : white;
-    margin : 0 0 1000px 0;
+    margin : 0 0 1400px 0;
 `
 
 const MainSection = styled.div`
@@ -163,7 +163,7 @@ const MainSection = styled.div`
 `
 
 const TextWrapper = styled.div`
-    margin : 0 0 0 12%;
+    margin : 0 12%;
     padding : 322px 0 0 0;
 `
 
@@ -172,12 +172,29 @@ const MainText = styled.p`
     font-weight : 600;
     line-height : 65px;
     margin : 0 0 38px 0;
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        font-size : 30px;
+    }
+
+    @media (max-width : 399px) {
+        font-size : 24px;
+    }
 `
 
 const SubText = styled.p`
     font-size : 48px;
     font-weight : 600;
     line-height : 65px;
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        font-size : 30px;
+    }
+
+    @media (max-width : 399px) {
+        font-size : 18px;
+        line-height : 30px;
+    }
 `
 
 const NumberAnimation = styled.div`
@@ -209,6 +226,10 @@ const SecondTitle = styled.p`
     font-size : 64px;
     font-weight : 600;
     line-height : 107%;
+
+    @media (max-width: 630px) {
+        font-size : 50px;
+    }
 `
 
 const SecondParagraph = styled.p`
@@ -218,8 +239,17 @@ const SecondParagraph = styled.p`
     line-height : 35px;
     letter-spacing : -2%;
 
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (min-width: 769px) and (max-width: 1600px) {
         font-size : 18px;
+    }
+
+    @media (max-width: 768px) {
+        font-size : 14px;
+        line-height : 24px;
+
+        & > br {
+            display : none !important;
+        }
     }
 `
 
@@ -248,8 +278,12 @@ const CardTitle = styled.p`
     font-size : 36px;
     font-weight : 600;
 
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (min-width: 631px) and (max-width: 1600px) {
         font-size : 24px;
+    }
+
+    @media (max-width: 630px) {
+        font-size : 22px;
     }
 `
 
@@ -259,7 +293,11 @@ const CardContents = styled.div`
     & > ul > li {
         font-size : 18px;
 
-        @media (min-width: 1280px) and (max-width: 1600px) {
+        @media (min-width: 631px) and (max-width: 1600px) {
+            font-size : 14px;
+        }
+
+        @media (max-width: 630px) {
             font-size : 14px;
         }
     }
@@ -270,7 +308,11 @@ const ViewBtn = styled.div`
     margin : 50px 0 0 0;
     cursor : pointer;
 
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (min-width: 631px) and (max-width: 1600px) {
+        font-size : 14px;
+    }
+
+    @media (max-width: 630px) {
         font-size : 14px;
     }
 `
@@ -283,6 +325,16 @@ const ThirdTitle = styled.p`
     font-size : 48px;
     line-height : 65px;
     font-weight : 600;
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        font-size : 30px;
+        line-height : 44px;
+    }
+
+    @media (max-width : 399px) {
+        font-size : 22px;
+        line-height : 35px;
+    }
 `
 
 const ThirdCardListWrapper = styled.div`
@@ -295,7 +347,7 @@ const ThirdCardListWrapper = styled.div`
 
 const CommunityCard = styled.div`
     width : 24%;
-    min-width : 240px;
+    min-width : 230px;
     box-sizing : border-box;
     height : 267px;
     display : block;
@@ -303,11 +355,11 @@ const CommunityCard = styled.div`
     background-color : #eee;
     margin : 0 0 30px 0;
     
-    @media (min-width: 990px) and (max-width: 1439px) {
+    @media (min-width: 631px) and (max-width: 1439px) {
         width : 48%;
     }
 
-    @media (max-width: 989px) {
+    @media (max-width: 630px) {
         width : 100%;
     }
 `
@@ -333,6 +385,15 @@ const ThirdParagraph = styled.p`
     font-weight : 600;
     line-height : 45px;;
     margin : 119px 0 0 0;
+
+    @media (max-width: 768px) {
+        font-size : 14px;
+        line-height : 24px;
+
+        & > br {
+            display : none !important;
+        }
+    }
 `
 
 const FourthSection = styled.div`
@@ -352,12 +413,39 @@ const FourthTitle = styled.p`
     & > span {
         font-weight : 200;
     }
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        font-size : 30px;
+        line-height : 44px;
+
+        & > span {
+            display : block;
+        }
+    }
+
+    @media (max-width : 399px) {
+        font-size : 22px;
+        line-height : 35px;
+
+        & > span {
+            display : block;
+        }
+    }
 `
 
 const FourthParagraph = styled.p`
     font-size : 24px;
     line-height : 40px;
     margin : 83px 0 0 0;
+
+    @media (max-width: 768px) {
+        font-size : 14px;
+        line-height : 24px;
+
+        & > br {
+            display : none !important;
+        }
+    }
 `
 
 const FourthBtn = styled.div`
@@ -366,6 +454,10 @@ const FourthBtn = styled.div`
     font-weight : 600;
     cursor : pointer;
     margin : 21px 0 0 0;
+
+    @media (max-width: 768px) {
+        font-size : 14px;
+    }
 `
 
 const FifthSection = styled.div`
@@ -376,6 +468,11 @@ const FifthSectionWrapper = styled.div`
     display : flex;
     justify-content : space-between;
     margin : 56px 0 0 0;
+
+    @media (max-width: 860px) {
+        display : block;
+    }
+
 `
 
 const FifthTitle = styled.p`
@@ -386,10 +483,41 @@ const FifthTitle = styled.p`
     & > span {
         font-weight : 200;
     }
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        font-size : 30px;
+        line-height : 44px;
+
+        & > span {
+            display : block;
+        }
+    }
+
+    @media (max-width : 399px) {
+        font-size : 22px;
+        line-height : 35px;
+
+        & > span {
+            display : block;
+        }
+    }
 `
 
 const FifthParagraph = styled.p`
     font-size : 24px;
+
+    @media (min-width: 769px) and (max-width: 1080px) {
+        font-size : 18px;
+    }
+
+    @media (max-width: 768px) {
+        font-size : 14px;
+        line-height : 24px;
+
+        & > br {
+            display : none !important;
+        }
+    }
 `
 
 const FifthBtn = styled.div`
@@ -397,6 +525,11 @@ const FifthBtn = styled.div`
     font-size : 18px;
     font-weight : 600;
     cursor : pointer;
+
+    @media (max-width: 630px) {
+        font-size : 14px;
+        margin : 20px 0 0 0;
+    }
 `
 
 const FifthSectionCardWrapper = styled.div`
@@ -409,12 +542,14 @@ const FifthSectionCardWrapper = styled.div`
 
 const FifthSectonCard = styled.div`
     width : 32%;
-    height : 372px;
+    height : 0;
     background-color : #eee;
     margin : 0 0 20px 0;
+	padding-bottom: 30%;
 
-    @media (min-width: 990px) and (max-width: 1439px) {
-        width : 48%;
+    @media (max-width: 830px) {
+        width : 100%;
+        padding-bottom : 80%;
     }
 `
 
@@ -426,6 +561,16 @@ const SixthTitle = styled.p`
     margin : 280px 0 0 0;
     font-size : 48px;
     font-weight : 600;
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        font-size : 30px;
+        line-height : 44px;
+    }
+
+    @media (max-width : 399px) {
+        font-size : 22px;
+        line-height : 35px;
+    }
 `
 
 const SixthSectionCardWrapper = styled.div`
@@ -438,13 +583,21 @@ const SixthSectionCardWrapper = styled.div`
 
 const SixthSectionCard = styled.div`
     width : 32%;
-    height : 372px;
+    height : 0;
     background-color : #eee;
     margin : 0 0 20px 0;
+    padding-bottom: 30%;
     position : relative;
 
-    @media (min-width: 990px) and (max-width: 1439px) {
-        width : 48%;
+    @media (min-width: 631px) and (max-width: 1080px) {
+        width : 60%;
+        margin-left : 20%;
+        padding-bottom : 50%;
+    }
+
+    @media (max-width: 630px) {
+        width : 100%;
+        padding-bottom : 80%;
     }
 `
 
@@ -456,8 +609,16 @@ const SixthCardText = styled.p`
     top : 30px;
     left : 25px;
 
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (max-width: 1600px) {
         font-size : 18px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1599px) {
+        font-size : 18px;
+    }
+
+    @media (max-width: 630px) {
+        font-size : 14px;
     }
 `
 
@@ -469,8 +630,17 @@ const SixthMapBtn = styled.p`
     font-size : 24px;
     font-weight : 600;
 
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (max-width: 1600px) {
         font-size : 18px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1599px) {
+        font-size : 18px;
+    }
+
+    @media (max-width: 630px) {
+        font-size : 14px;
+        top : 150px;
     }
 `
 

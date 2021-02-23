@@ -48,6 +48,16 @@ const LogoWrapper = styled.div`
     & > img {
         width : 100%;
     }
+
+    @media (min-width: 400px) and (max-width: 630px) {
+        margin : 10px 0 0 10px;
+        width : 110px;
+    }
+
+    @media (max-width : 399px) {
+        margin : 10 0 0 -10px ;
+        width : 100px;
+    }
 `
 
 const MenuBtn = styled.div`
@@ -58,6 +68,11 @@ const MenuBtn = styled.div`
     position : fixed;
     z-index : 10;
     right : 34px;
+
+    @media (max-width: 630px) {
+        margin : 55px 5px 0 0;
+        right : 5px;
+    }
 `
 
 const HamburgerMenu = styled.div`

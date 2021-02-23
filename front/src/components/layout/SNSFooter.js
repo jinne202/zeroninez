@@ -46,6 +46,11 @@ const SNSFooterWrapper = styled.div`
 
 const SNSWrapper = styled.div`
     display : flex;
+
+    @media (max-width: 630px) {
+        display : block;
+        margin : 0 0 40px 0;
+    }
 `
 
 const SNSList = styled.div`
@@ -54,9 +59,18 @@ const SNSList = styled.div`
     font-size : 30px;
     color : black;
 
+    @media (max-width: 630px) {
+        font-size : 24px;
+        margin : 0 0 20px 0;
+    }
+
     & > p {
         font-size : 18px;
         margin : 0 0 0 10px;
+
+        @media (max-width: 630px) {
+            font-size : 14px;
+        }
     }
 `
 
@@ -68,6 +82,10 @@ const ComponyInfo = styled.div`
 
     & > ul {
         display : flex;
+
+        @media (max-width: 800px) {
+            display : block;
+        }
     }
 
     & > ul > li {
@@ -75,7 +93,7 @@ const ComponyInfo = styled.div`
         margin : 0 25px 0 0;
         font-weight : 600;
 
-        @media (min-width: 1280px) and (max-width: 1600px) {
+        @media (max-width: 1600px) {
             font-size : 14px;
         }
     }
@@ -83,18 +101,28 @@ const ComponyInfo = styled.div`
     & > ul > li:last-child {
         font-weight : 500;
     }
+
+    @media (max-width: 1600px) {
+        display : block;    
+    }
 `
 
 const CompanyMent = styled.div`
     display : flex;
     font-size : 18px;
     
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (max-width: 1600px) {
         font-size : 14px;
+        display : block;
+        margin : 30px 0 0 0;
     }
 
      & > p {
          margin : 0 0 0 25px;
+
+         @media (max-width: 1600px) {
+            margin : 5px 0 0 0;
+        }
      }
 `
 
