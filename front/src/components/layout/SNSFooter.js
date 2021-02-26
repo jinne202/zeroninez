@@ -31,9 +31,9 @@ const SNSFooter = () => {
                     <p>
                         덕 - 업 - 일 - 취 - 월 - 장
                     </p>
-                    <p>
+                    <CompanyMentDesc>
                         열정을 담아 거듭나는 모든 크리에이터를 응원합니다.
-                    </p>
+                    </CompanyMentDesc>
                 </CompanyMent>
             </ComponyInfo>
         </SNSFooterWrapper>
@@ -125,5 +125,19 @@ const CompanyMent = styled.div`
         }
      }
 `
+
+const CompanyMentDesc = styled.p`
+    margin : 0 0 0 25px;
+
+    @media (max-width: 1600px) {
+    margin : 5px 0 0 0;
+    }
+
+    @media (max-width : 399px) {
+        margin : 55px 0 0 0;
+        font-size : 12px;
+    }
+`
+
 
 export default SNSFooter;

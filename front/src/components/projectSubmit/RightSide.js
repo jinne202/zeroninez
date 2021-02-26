@@ -145,7 +145,7 @@ const RightSide = () => {
 
     const budget = budgetList.map(({ id, name }) => {
         return (
-          <>
+          <div>
             <Checkbox
               key={id}
               type="radio"
@@ -154,7 +154,7 @@ const RightSide = () => {
               handleClick={handleClickBudget}
               isChecked={isCheckBudget.includes(id)}
             />
-          </>
+          </div>
         );
     });
 
@@ -206,32 +206,40 @@ const RightSide = () => {
                     <CheckboxWrapper>
                         <CheckContainer>
                             <SubTitle>Consult.</SubTitle>
-                            {consult}
+                            <SubContainer>
+                                {consult}
+                            </SubContainer>
                         </CheckContainer>
                         <CheckContainer>
                             <SubTitle>Visual.</SubTitle>
-                            {visual}
+                            <SubContainer>
+                                {visual}
+                            </SubContainer>
                         </CheckContainer>
                         <CheckContainer>
                             <SubTitle>Dev.</SubTitle>
-                            {dev}
+                            <SubContainer>
+                                {dev}
+                            </SubContainer>
                         </CheckContainer>
                         <CheckContainer>
                             <SubTitle>Edu.</SubTitle>
-                            {edu}
+                            <SubContainer>
+                                {edu}
+                            </SubContainer>
                         </CheckContainer>
                     </CheckboxWrapper>
                 </PartOne>
                 <PartTwo>
                     <PartTwoTextWrapper>
-                        <Title>프로젝트에 대한 간단히 설명해주세요.</Title>
+                        <Title>프로젝트에 대해 간단히 설명해주세요.</Title>
                         <CountText>{maxLimit ? <CountLimit>{characterCount}</CountLimit> : <CountNotLimit>{characterCount}</CountNotLimit>} / 300자</CountText>
                     </PartTwoTextWrapper>
                     <TextArea type="text" value={projectExplain} onChange={handleCharacterCount} required></TextArea>
                 </PartTwo>
                 <PartThree>
                     <PartThreeTextWrapper>
-                    <PartThreeTitle id = "fileName">프로젝트의 이해를 돕는 자료를 보내주세요.</PartThreeTitle>
+                    <PartThreeTitle id = "fileName">프로젝트에 대한 <br/> 자료를 보내주세요.</PartThreeTitle>
                     <FileLabel>
                         <FileIcon><AiOutlinePaperClip/></FileIcon>
                         <FileInput type = "file" onChange={handleFileUpload}/>
@@ -285,12 +293,17 @@ const RightSideWrapper = styled.div`
     justify-content : flex-end;
     padding : 0;
     color : white;
+
+    @media (max-width : 420px) {
+        position : relative;
+        width : 100%;
+    }
 `
 
 const FormWrapper = styled.form`
     width : 68%;
 
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         width : 100%;
     }
 `
@@ -308,7 +321,25 @@ const Title = styled.p`
         margin : 0 0 0 15px;
     }
 
-    @media (max-width : 399px) {
+    @media (min-width: 769px) and (max-width: 1024px) {
+        & > span {
+            display : block;
+            margin : 0;
+            font-size : 10px;
+        }
+    }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 14px;
+        & > span {
+            display : block;
+            margin : 0;
+            font-size : 10px;
+        }
+    }
+
+    @media (max-width : 420px) {
+        font-size : 16px;
         margin : 0 0 0 0;
 
         & > span {
@@ -322,6 +353,10 @@ const Title = styled.p`
 const CheckboxWrapper = styled.div`
     display : flex;
     justify-content : space-between;
+
+    @media (max-width : 420px) {
+        display : block;
+    }
 `
 
 const CheckContainer = styled.div`
@@ -329,6 +364,25 @@ const CheckContainer = styled.div`
 
 const SubTitle = styled.p`
     margin : 40px 0 40px 30px;
+    color : #585858;
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 11px;
+    }
+
+    @media (max-width : 420px) {
+        margin : 40px 0 40px 0;
+    }
+`
+
+const SubContainer = styled.p`
+
+    @media (max-width : 420px) {
+        display : flex;
+        flex-wrap: wrap;
+        width : 100%;
+        margin : 0 0 0 0;
+    }
 `
 
 const PartTwo = styled.div`
@@ -340,6 +394,11 @@ const PartTwoTextWrapper = styled.div`
     display : flex;
     justify-content : space-between;
     margin : 0 0 20px 0;
+
+
+    @media (max-width : 420px) {
+        display : block;
+    }
 `
 
 const TextArea = styled.textarea`
@@ -352,6 +411,11 @@ const TextArea = styled.textarea`
     outline : none;
     padding : 20px;
     color : white;
+
+    @media (max-width : 420px) {
+        margin : 0 0 0 0;
+        width : 100%;
+    }
 `
 
 const CountText = styled.div`
@@ -359,6 +423,10 @@ const CountText = styled.div`
     color : #AEAEAE;
     padding : 2px 0 0 0;
     display : flex;
+
+    @media (max-width : 420px) {
+        font-size : 10px;
+    }
 `
 
 const CountNotLimit = styled.p`
@@ -372,17 +440,36 @@ const CountLimit = styled(CountNotLimit)`
 const PartThree = styled.div`
     margin : 80px 0 0 30px;
     width : calc(100% - 30px);
+
+    @media (max-width : 420px) {
+        margin : 80px 0 0 0;
+        width : 100%;
+    }
 `
 
 const PartThreeTitle = styled(Title)`
     margin : 0 0 0 0;
     padding : 6px 0 0 0;
+
+    & > br {
+        display : none !important;
+    }
+
+    @media (max-width : 420px) {
+        & > br {
+            display : inline;
+        }
+    }
 `
 
 const PartThreeTextWrapper = styled.div`
     display : flex;
     justify-content : space-between;
     border-bottom : 1px solid #545454;
+
+    @media (max-width : 420px) {
+        display : flex;
+    }
 `
 
 const FileLabel = styled.label`
@@ -401,6 +488,11 @@ const PartThreeDesc = styled.div`
     font-size : 12px;
     color : #00FFB2;
     margin : 15px 0 0 0;
+
+    @media (max-width : 420px) {
+        font-size : 10px;
+        width : 260px;
+    }
 `
 
 const PartFour = styled.div`
@@ -411,6 +503,21 @@ const BudgetCheckbox = styled.div`
     display : flex;
     justify-content : space-between;
     margin : 40px 0 0 0;
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        display : flex;
+        flex-wrap: wrap;
+
+        & > div {
+            width : 130px;
+        }
+    }
+
+    @media (max-width : 420px) {
+        display : flex;
+        flex-wrap: wrap;
+        width : 100%;
+    }
 `
 
 const PartFive = styled.div`
@@ -427,11 +534,26 @@ const InputWrapper = styled.div`
     width : calc(100% - 30px);
     padding : 0 0 20px 0;
     border-bottom : 1px solid #545454;
+
+    @media (max-width : 420px) {
+        width : 100%;
+        margin : 0 0 0 0;
+    }
 `
 
 const InputTitle = styled.p`
     width : 200px;
     font-size : 18px;
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 14px;
+        width : 250px;
+    }
+
+    @media (max-width : 420px) {
+        font-size : 14px;
+        width : 250px;
+    }
 `
 
 const PartFiveInput = styled.input`
@@ -444,14 +566,31 @@ const PartFiveInput = styled.input`
     &:focus {
         color : white;
     }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 14px;
+    }
+
+    @media (max-width : 420px) {
+        font-size : 14px;
+        padding-top : 2px;
+    }
 `
 
 const SquareCheckboxWrapper = styled.div`
     margin : 35px 0 0 30px;
+
+    @media (max-width : 420px) {
+        margin : 20px 0 0 0;
+    }
 `
 
 const InputWrapperMargin = styled(InputWrapper)` 
     margin : 90px 0 0 30px;
+
+    @media (max-width : 420px) {
+        margin : 90px 0 0 0;
+    }
 `
 
 const IndividaulWrapper = styled.div`
@@ -463,6 +602,23 @@ const LastDesc = styled.p`
     color : white;
     margin : 40px 0 0 30px;
     width : calc(100% - 30px);
+  
+    @media (min-width: 769px) and (max-width: 1024px) {
+        margin : 70px 0 0 30px;
+        font-size : 18px;
+        line-height : 24px;
+    }
+
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 14px;
+    }
+
+    @media (max-width : 420px) {
+        margin : 40px 0 0 0;
+        width : 100%;
+        font-size : 12px;
+    }
 `
 
 const SubmitBtn = styled.button`
@@ -475,6 +631,13 @@ const SubmitBtn = styled.button`
     border : 0;
     outline : none;
     cursor : pointer;
+
+    @media (max-width : 420px) {
+        width : 100%;
+        margin : 85px 0 100px 0;
+        height : 60px;
+        font-size : 18px;
+    }
 `
 
 export default RightSide;

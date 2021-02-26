@@ -22,17 +22,32 @@ const ProjectSubmitWrapper = styled.div`
     background-color : #2e2e2e;
 
     
-    @media (min-width: 1280px) and (max-width: 1600px) {
+    @media (min-width: 1025px) and (max-width: 1600px) {
         padding : 170px 0 140px 0;
     }
 
-    @media (max-width : 399px) {
+    @media (min-width: 421px) and (max-width: 1024px) {
+        padding : 170px 0 140px 0;
+    }
+
+    @media (max-width : 420px) {
         padding : 150px 0 0 0;
     }
 `
 
 const ProjectSubmitInnerContainer = styled.div`
     margin : 0 12%;
+
+    @media (min-width: 421px) and (max-width: 1024px) {
+        margin : 0 8%;
+    }
+
+    @media (max-width : 420px) {
+        margin : 0 8%;
+        display : flex;
+        flex-direction: column-reverse;
+        flex-wrap : wrap;
+    }
 `
 
 export default ProjectSubmitPage;

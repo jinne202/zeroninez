@@ -78,6 +78,16 @@ const CheckBoxIcon = styled(CheckBoxSpan)`
       transition: all 0.6s ease;
     }
   `}
+
+  @media (max-width : 399px) {
+    width : 18px;
+    height : 18px;
+
+    & > svg {
+      top : 2px;
+      left : 2px;
+    }
+  }
 `
 
 const CheckBoxLabel = styled.label`
@@ -96,11 +106,29 @@ const CheckBoxText = styled(CheckBoxSpan)`
   padding-left: 20px;
   position : absolute;
   line-height : 100%;
-  display : blcok;
-  bottom : 4px;
+  top : 7px;
   ${props => props.checked === true &&
   css`
   `}
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    top : 4px;
+    font-size : 14px;
+    line-height : 24px;
+  }
+
+  @media (min-width: 421px) and (max-width: 768px) {
+    top : 4px;
+    font-size : 14px;
+    line-height : 24px;
+}
+
+  @media (max-width : 420px) {
+    font-size : 10px;
+    line-height : 14px;
+    top : 10px;
+    padding-left : 10px;
+  }
 `
 
 const CheckBoxInput = styled.input`

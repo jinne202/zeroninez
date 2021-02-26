@@ -26,12 +26,12 @@ const ProjectPage = () => {
                     <InputMark></InputMark>최신순으로
                 </RadioLabel>
                 </LabelWrapper>
-                <LabelWrapper>
+                <LabelWrapperRight>
                 <RadioLabel>
                 <RadioInput type="radio" name="array" value="가나다순으로" checked={select === "가나다순으로"} onChange={e => handleSelectedChange(e)}/>
                     <InputMark></InputMark>가나다순으로
                 </RadioLabel>
-                </LabelWrapper>
+                </LabelWrapperRight>
             </RadioForm>
         </ProjectTitleSection>
         <CardGrid>
@@ -42,7 +42,9 @@ const ProjectPage = () => {
             })}
         </CardGrid>
         <ShowMore>
-            {arrowIcon}
+            <IconWrapper>
+                {arrowIcon}
+            </IconWrapper>
             <ShowMoreText>더보기</ShowMoreText>
         </ShowMore>
     </ProjectPageWrapper>
@@ -58,9 +60,13 @@ const ProjectPageWrapper = styled.div`
 `
 
 const ProjectTitleSection = styled.div`
-    padding : 293px 12% 50px;
+    padding : 293px 8% 50px;
     display : flex;
     justify-content : space-between;
+
+    @media (max-width : 420px) {
+        display : block;
+    }
 `
 
 const ProjectTitle = styled.div`
@@ -68,10 +74,17 @@ const ProjectTitle = styled.div`
 `
 
 const RadioForm = styled.form`
+    @media (max-width : 420px) {
+        margin : 20px 0 0 0;
+    }
 `
 
 const LabelWrapper = styled.div`
     display : inline-block;
+    margin : 0 0 0 0;
+`
+
+const LabelWrapperRight = styled(LabelWrapper)`
     margin : 0 0 0 20px;
 `
 
@@ -125,7 +138,7 @@ const RadioInput = styled.input`
 
 const CardGrid = styled.div`
     width : 100%;
-    padding : 0 12%;
+    padding : 0 8%;
     display : inline-grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 15px;
@@ -139,16 +152,23 @@ const CardGrid = styled.div`
 `
 
 const ShowMore = styled.div`
-    margin : 100px 48.5% 0;
+    margin : 100px 0 0 0;
     position : relative;
-    width : 3%;
+    width : 100%;
+`
+
+const IconWrapper = styled.div`
+    display : block;
+    width : 31px;
+    margin : 0 auto;
 `
 
 const ShowMoreText = styled.p`
     position : absolute;
     top : 40px;
-    left : -11px;
     font-size : 18px;
+    width : 100%;
+    text-align   : center;
 `
 
 export default ProjectPage;

@@ -44,15 +44,27 @@ const LeftSideWrapper = styled.div`
     color : white;
     position : fixed;
 
-    
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         position : relative;
+        width : 100%;
+        display : block;
     }
 `
 
 const Title = styled.p`
     font-size : 24px;
     font-weight : 700;
+
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 24px;
+        width : 200px;
+    }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 18px;
+        width : 150px;
+    }
 `
 
 const ContactSection = styled.div`
@@ -63,10 +75,26 @@ const ContactTitle = styled.p`
     font-size : 14px;
     margin : 0 0 40px 0;
     font-weight : 400;
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 12px;
+    }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 10px;
+    }
 `
 
 const ContactDesc= styled.p`
     font-size : 18px;
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 14px;
+    }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 12px;
+    }
 `
 
 const SNSSection = styled.div`
@@ -76,11 +104,23 @@ const SNSSection = styled.div`
 const SNSTitle = styled.p`
     font-size : 14px;
     margin : 0 0 40px 0;
-    font-weight : 400;                        
+    font-weight : 400;    
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        font-size : 12px;
+    }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        font-size : 10px;
+    }
 `
 
 const SNSDesc = styled.div`
     width : 210px;
+
+    @media (min-width: 421px) and (max-width: 1024px) {
+        width : 150px;
+    }
 `
 
 const IconWrapper = styled.div`
@@ -93,6 +133,11 @@ const IconWrapper = styled.div`
 
     &:hover {
         opacity : 1;
+    }
+
+    @media (min-width: 421px) and (max-width: 1024px) {
+        font-size : 22px;
+        margin : 0 20px 15px 0;
     }
 `
 

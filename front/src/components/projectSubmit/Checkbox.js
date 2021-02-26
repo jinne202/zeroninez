@@ -48,7 +48,7 @@ const CheckBoxIcon = styled(CheckBoxSpan)`
     top: 4px;
     left: 5px;
     fill: none;
-    stroke: #BD00FF;
+    stroke: #FF48ED;
     stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -62,7 +62,7 @@ const CheckBoxIcon = styled(CheckBoxSpan)`
     content: "";
     width: 100%;
     height: 100%;
-    background: #BD00FF;
+    background: #FF48ED;
     display: block;
     transform: scale(0);
     opacity: 1;
@@ -91,19 +91,32 @@ const CheckBoxLabel = styled.label`
   font-weight : 500;
   position : relative;
   width : 150px;
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size : 14px;
+    line-height : 24px;
+  }
+
+  @media (min-width: 421px) and (max-width: 768px) {
+    font-size : 11px;
+}
+
+  @media (max-width : 420px) {
+    font-size : 14px;
+  }
 `
 
 const CheckBoxText = styled(CheckBoxSpan)`
   padding: 0 0 9px 0;
   margin : 0 0 0 6px;
   line-height : 100%;
-  display : blcok;
+  display : inline-block;
   border-bottom : 1px solid transparent;
   bottom : 3px;
   ${props => props.checked === true &&
   css`
-    color : #BD00FF;
-    border-bottom : 1px solid #BD00FF;
+    color : #FF48ED;
+    border-bottom : 1px solid #FF48ED;
   `}
 `
 
@@ -113,6 +126,11 @@ const CheckBoxInput = styled.input`
 
 const CheckboxWrapper = styled.div`
     margin : 0 0 20px 0;
+    height : 60px;
+
+    @media (max-width : 420px) {
+      width : 50%;
+    }
 `
 
 export default Checkbox;

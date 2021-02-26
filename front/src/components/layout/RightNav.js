@@ -57,18 +57,22 @@ const RightNavWrapper = styled.div`
 
         cursor : pointer;
 
-        @media (max-width: 399px) {
+        @media (max-width: 420px) {
             font-size : 24px;
         }
     }
 
     ${props => props.active === true &&
         css`
-            background : #eee;
+            background : #fff;
+            
+            & > ul > li {
+                color : black;
+            }
         `
     }
 
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         position : fixed;
         height : 100vh;
         width : 100%;
@@ -88,7 +92,11 @@ const RightNavWrapper = styled.div`
         
         ${props => props.active === true &&
             css`
-                background : #eee;
+                background : #fff;
+            
+                & > ul > li {
+                    color : black;
+                }
             `
         }
     }

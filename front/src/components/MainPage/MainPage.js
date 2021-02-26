@@ -42,7 +42,7 @@ const MainPage = () => {
                             <li>• 컨버전스 환경에서 최적의 디지털 미디어 디자인안</li>
                             <li>• 소셜섹터에 꼭 필요한 전략적 디자인</li>
                         </ul>
-                        <ViewBtn>→ 포트폴리오 보기</ViewBtn>
+                        <CardImage></CardImage>
                     </CardContents>
                 </CardWrapper>
                 <CardWrapper>
@@ -53,7 +53,7 @@ const MainPage = () => {
                             <li>• 커뮤니케이션 전략을 포함한 포괄적 브랜딩</li>
                             <li>• 비주얼 요소 구성과 각종 인쇄물 기획 및 디자인</li>
                         </ul>
-                        <ViewBtn>→ 포트폴리오 보기</ViewBtn>
+                        <CardImage></CardImage>
                     </CardContents>
                 </CardWrapper>
                 <CardWrapper>
@@ -64,9 +64,12 @@ const MainPage = () => {
                             <li>• 웹사이트, 어플리케이션 구현개발</li>
                             <li>• 데이터, 서버사이드 최적화 구현</li>
                         </ul>
-                        <ViewBtn>→ 포트폴리오 보기</ViewBtn>
+                        <CardImage></CardImage>
                     </CardContents>
                 </CardWrapper>
+                <ViewBtnWrapper>
+                    <ViewBtn>→ 포트폴리오 전체보기</ViewBtn>
+                </ViewBtnWrapper>
             </ListWrapper>
         </SecondSection>
         <ThirdSection>
@@ -82,7 +85,7 @@ const MainPage = () => {
                     <CommunityTitle>holixrounge.com<span>Workshop</span></CommunityTitle>
                 </CommunityCard>
                 <CommunityCard>
-                    <CommunityTitle>mingle.com<span>SNG Based PR Platform</span></CommunityTitle>
+                    <CommunityTitle>mingle.com<span>SNS Based PR Platform</span></CommunityTitle>
                 </CommunityCard>
             </ThirdCardListWrapper>
             <ThirdParagraph>
@@ -160,11 +163,19 @@ const MainSection = styled.div`
     font-family: 'Noto Sans KR', sans-serif;
     width : 100%;
     height : 100vh;
+
+    @media (min-width: 421px) and (max-width: 1024px) {
+        height : 70vh;
+    }
 `
 
 const TextWrapper = styled.div`
     margin : 0 12%;
     padding : 322px 0 0 0;
+
+    @media (max-width : 420px) {
+        margin : 0 8%;
+    }
 `
 
 const MainText = styled.p`
@@ -173,11 +184,11 @@ const MainText = styled.p`
     line-height : 65px;
     margin : 0 0 38px 0;
 
-    @media (min-width: 400px) and (max-width: 630px) {
-        font-size : 30px;
+    @media (min-width: 421px) and (max-width: 1024px) {
+        font-size : 36px;
     }
 
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         font-size : 24px;
     }
 `
@@ -187,11 +198,12 @@ const SubText = styled.p`
     font-weight : 600;
     line-height : 65px;
 
-    @media (min-width: 400px) and (max-width: 630px) {
-        font-size : 30px;
+    @media (min-width: 421px) and (max-width: 1024px) {
+        font-size : 36px;
+        line-height : 54px;
     }
 
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         font-size : 18px;
         line-height : 30px;
     }
@@ -219,6 +231,10 @@ const Number = styled.div`
 const SecondSection = styled.div`
     margin : 0 12%;
     padding : 123px 0 0 0;
+
+    @media (max-width : 420px) {
+        margin : 0 8%;
+    }
 `
 
 const SecondTitle = styled.p`
@@ -239,8 +255,17 @@ const SecondParagraph = styled.p`
     line-height : 35px;
     letter-spacing : -2%;
 
-    @media (min-width: 769px) and (max-width: 1600px) {
+    @media (min-width: 1025px) and (max-width: 1600px) {
         font-size : 18px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 18px;
+        line-height : 24px;
+
+        & > br {
+            display : none !important;
+        }
     }
 
     @media (max-width: 768px) {
@@ -262,14 +287,14 @@ const ListWrapper = styled.div`
 `
 
 const CardWrapper = styled.div`
-    margin : 0 0 70px 0;
+    margin : 0 0 30px 0;
     width : 30%;
 
-    @media (min-width: 990px) and (max-width: 1439px) {
+    @media (min-width: 1025px) and (max-width: 1439px) {
         width : 30%;
     }
 
-    @media (max-width: 989px) {
+    @media (max-width: 1024px) {
         width : 100%;
     }
 `
@@ -283,7 +308,7 @@ const CardTitle = styled.p`
     }
 
     @media (max-width: 630px) {
-        font-size : 22px;
+        font-size : 18px;
     }
 `
 
@@ -293,7 +318,7 @@ const CardContents = styled.div`
     & > ul > li {
         font-size : 18px;
 
-        @media (min-width: 631px) and (max-width: 1600px) {
+        @media (min-width: 1025px) and (max-width: 1600px) {
             font-size : 14px;
         }
 
@@ -303,10 +328,31 @@ const CardContents = styled.div`
     }
 `
 
+const CardImage = styled.div`
+    width : 100%;
+    height : 0;
+    background-color : #eee;
+    margin : 70px 0 20px 0;
+	padding-bottom: 75%;
+
+    @media (min-width: 631px) and (max-width: 1024px) {
+        width : 50%;
+        padding-bottom: 35%;
+    }
+`
+
+const ViewBtnWrapper = styled.div`
+    width : 100%;
+    display : flex;
+    justify-content : flex-end;
+`
+
 const ViewBtn = styled.div`
     font-size : 18px;
-    margin : 50px 0 0 0;
+    margin : 0 0 0 0;
     cursor : pointer;
+    color : #3503FF;
+    display : inline-block;
 
     @media (min-width: 631px) and (max-width: 1600px) {
         font-size : 14px;
@@ -320,8 +366,8 @@ const ViewBtn = styled.div`
 const ThirdSection = styled.div`
     margin : 199px 12% 186px;
 
-    @media (max-width : 399px) {
-        margin : 0 8% 0 ;
+    @media (max-width : 420px) {
+        margin : 199px 8% 186px;
     }
 `
 
@@ -330,8 +376,8 @@ const ThirdTitle = styled.p`
     line-height : 65px;
     font-weight : 600;
 
-    @media (min-width: 400px) and (max-width: 630px) {
-        font-size : 30px;
+    @media (min-width: 400px) and (max-width: 1024px) {
+        font-size : 36px;
         line-height : 44px;
     }
 
@@ -390,6 +436,15 @@ const ThirdParagraph = styled.p`
     line-height : 45px;;
     margin : 119px 0 0 0;
 
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 18px;
+        line-height : 28px;
+
+        & > br {
+            display : none !important;
+        }
+    }
+
     @media (max-width: 768px) {
         font-size : 14px;
         line-height : 24px;
@@ -408,6 +463,10 @@ const FourthSection = styled.div`
 const FourthWrapper = styled.div`
     margin : 0 12%;
     padding : 332px 0 0 0;
+
+    @media (max-width : 399px) {
+        margin : 0 8% 0 ;
+    }
 `
 
 const FourthTitle = styled.p`
@@ -418,8 +477,8 @@ const FourthTitle = styled.p`
         font-weight : 200;
     }
 
-    @media (min-width: 400px) and (max-width: 630px) {
-        font-size : 30px;
+    @media (min-width: 421px) and (max-width: 1024px) {
+        font-size : 36px;
         line-height : 44px;
 
         & > span {
@@ -427,7 +486,7 @@ const FourthTitle = styled.p`
         }
     }
 
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         font-size : 22px;
         line-height : 35px;
 
@@ -441,6 +500,11 @@ const FourthParagraph = styled.p`
     font-size : 24px;
     line-height : 40px;
     margin : 83px 0 0 0;
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 18px;
+        line-height : 24px;
+    }
 
     @media (max-width: 768px) {
         font-size : 14px;
@@ -459,6 +523,11 @@ const FourthBtn = styled.div`
     cursor : pointer;
     margin : 21px 0 0 0;
 
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size : 18px;
+        line-height : 24px;
+    }
+
     @media (max-width: 768px) {
         font-size : 14px;
     }
@@ -466,6 +535,10 @@ const FourthBtn = styled.div`
 
 const FifthSection = styled.div`
     margin : 0 12%;
+
+    @media (max-width : 420px) {
+        margin : 0 8% 0 ;
+    }
 `
 
 const FifthSectionWrapper = styled.div`
@@ -488,8 +561,8 @@ const FifthTitle = styled.p`
         font-weight : 200;
     }
 
-    @media (min-width: 400px) and (max-width: 630px) {
-        font-size : 30px;
+    @media (min-width: 421px) and (max-width: 1024px) {
+        font-size : 36px;
         line-height : 44px;
 
         & > span {
@@ -497,7 +570,7 @@ const FifthTitle = styled.p`
         }
     }
 
-    @media (max-width : 399px) {
+    @media (max-width : 420px) {
         font-size : 22px;
         line-height : 35px;
 
@@ -530,7 +603,11 @@ const FifthBtn = styled.div`
     font-weight : 600;
     cursor : pointer;
 
-    @media (max-width: 630px) {
+    @media (min-width: 769px) and (max-width: 1080px) {
+        font-size : 18px;
+    }
+
+    @media (max-width: 768px) {
         font-size : 14px;
         margin : 20px 0 0 0;
     }
@@ -542,6 +619,10 @@ const FifthSectionCardWrapper = styled.div`
     margin : 110px 0 0 0;
     flex-wrap: wrap;
     gap: 12px;
+
+    @media (min-width: 768px) and (max-width: 1080px) {
+        gap : 5px;
+    }
 `
 
 const FifthSectonCard = styled.div`
@@ -551,7 +632,7 @@ const FifthSectonCard = styled.div`
     margin : 0 0 20px 0;
 	padding-bottom: 30%;
 
-    @media (max-width: 830px) {
+    @media (max-width: 767px) {
         width : 100%;
         padding-bottom : 80%;
     }
@@ -559,6 +640,10 @@ const FifthSectonCard = styled.div`
 
 const SixthSection = styled.div`
     margin : 0 12% 260px;
+
+    @media (max-width : 420px) {
+        margin : 0 8% 260px;
+    }
 `
 
 const SixthTitle = styled.p`
@@ -566,8 +651,8 @@ const SixthTitle = styled.p`
     font-size : 48px;
     font-weight : 600;
 
-    @media (min-width: 400px) and (max-width: 630px) {
-        font-size : 30px;
+    @media (min-width: 400px) and (max-width: 1024px) {
+        font-size : 36px;
         line-height : 44px;
     }
 
@@ -583,6 +668,10 @@ const SixthSectionCardWrapper = styled.div`
     margin : 90px 0 0 0;
     flex-wrap: wrap;
     gap: 12px;
+
+    @media (min-width: 631px) and (max-width: 1024px) {
+        gap : 5px;
+    }
 `
 
 const SixthSectionCard = styled.div`
@@ -593,10 +682,9 @@ const SixthSectionCard = styled.div`
     padding-bottom: 30%;
     position : relative;
 
-    @media (min-width: 631px) and (max-width: 1080px) {
-        width : 60%;
-        margin-left : 20%;
-        padding-bottom : 50%;
+    @media (min-width: 631px) and (max-width: 1024px) {
+        width : 32%;
+        padding-bottom : 27%;
     }
 
     @media (max-width: 630px) {
@@ -613,12 +701,14 @@ const SixthCardText = styled.p`
     top : 30px;
     left : 25px;
 
-    @media (max-width: 1600px) {
+    @media (min-width: 1025px) and (max-width: 1600px) {
         font-size : 18px;
     }
 
-    @media (min-width: 631px) and (max-width: 1599px) {
-        font-size : 18px;
+    @media (min-width: 631px) and (max-width: 1024px) {
+        font-size : 12px;
+        top : 15px;
+        left : 13px;
     }
 
     @media (max-width: 630px) {
@@ -634,12 +724,14 @@ const SixthMapBtn = styled.p`
     font-size : 24px;
     font-weight : 600;
 
-    @media (max-width: 1600px) {
+    @media (min-width: 1025px) and (max-width: 1600px) {
         font-size : 18px;
     }
 
-    @media (min-width: 631px) and (max-width: 1599px) {
-        font-size : 18px;
+    @media (min-width: 631px) and (max-width: 1024px) {
+        font-size : 12px;
+        top : 110px;
+        left : 13px;
     }
 
     @media (max-width: 630px) {
