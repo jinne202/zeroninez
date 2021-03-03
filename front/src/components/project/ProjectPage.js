@@ -17,6 +17,7 @@ const ProjectPage = () => {
 
     return (
     <ProjectPageWrapper>
+        <MenuTitle>프로젝트</MenuTitle>
         <ProjectTitleSection>
             <ProjectTitle>모든 프로젝트 . 99</ProjectTitle>
             <RadioForm>
@@ -52,7 +53,7 @@ const ProjectPage = () => {
 }
 
 const ProjectPageWrapper = styled.div`
-    margin : 0 0 1000px 0;
+    margin : 0 0 1400px 0;
     z-index : 2;
     padding : 0 0 300px 0;
     position : relative;
@@ -169,6 +170,27 @@ const ShowMoreText = styled.p`
     font-size : 18px;
     width : 100%;
     text-align   : center;
+`
+
+const MenuTitle = styled.p`
+    font-size : 24px;
+    text-align : center;
+    font-weight : 600;
+    position : absolute;
+    width : 100%;
+    top : 70px;
+
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        font-size : 18px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1024px) {
+        font-size : 12px;
+    }
+
+    @media (max-width: 630px) {
+        font-size : 0px;
+    }
 `
 
 export default ProjectPage;

@@ -7,9 +7,10 @@ import MainPage from '../components/MainPage/MainPage';
 const Zeroninez = () => {
     return (
         <div>
-            <AppLayout/>
+            <AppLayout>
             <MainPage/>
             <Footer/>
+            </AppLayout>
         </div>
     )
 }

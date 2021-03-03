@@ -14,6 +14,7 @@ const shapeTwo = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xml
 const MainPage = () => {
     return (
         <MainPageWrapper>
+        <MenuTitle>안녕하세요. 제로나인즈 입니다.</MenuTitle>
         <MainSection>
             <TextWrapper>
                 <MainText>
@@ -353,6 +354,7 @@ const ViewBtn = styled.div`
     cursor : pointer;
     color : #3503FF;
     display : inline-block;
+    font-weight : 700;
 
     @media (min-width: 631px) and (max-width: 1600px) {
         font-size : 14px;
@@ -737,6 +739,27 @@ const SixthMapBtn = styled.p`
     @media (max-width: 630px) {
         font-size : 14px;
         top : 150px;
+    }
+`
+
+const MenuTitle = styled.p`
+    font-size : 24px;
+    text-align : center;
+    font-weight : 600;
+    position : absolute;
+    width : 100%;
+    top : 70px;
+
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        font-size : 18px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1024px) {
+        font-size : 12px;
+    }
+
+    @media (max-width: 630px) {
+        font-size : 0px;
     }
 `
 

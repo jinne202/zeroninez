@@ -7,7 +7,6 @@
   margin: 0;
 }
 
-html,
 body {
   width : 100%;
   padding: 0;
@@ -17,6 +16,7 @@ body {
   background-color: #ffffff;
   font-family: 'Noto Sans KR', sans-serif;
   overflow-x: hidden;
+  position: relative;
 }
 
 ul, li {
@@ -90,3 +90,7 @@ body::-webkit-scrollbar-corner {
   /*  상하+좌우 스크롤이 만나는 공간   */
 background-color: #f9f9f9;
 }
+
+a {color: #fff; text-decoration: none; outline: none}
+
+a:hover, a:active {text-decoration: none; color:#fff; background-color:#f59000;}

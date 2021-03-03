@@ -7,9 +7,10 @@ import ProjectPage from '../components/project/ProjectPage';
 const project = () => {
     return (
         <>
-            <AppLayout/>
+            <AppLayout>
             <ProjectPage/>
             <Footer/>
+            </AppLayout>
         </>
     )
 }

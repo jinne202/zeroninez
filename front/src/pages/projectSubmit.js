@@ -7,8 +7,9 @@ import ProjectSubmitPage from '../components/projectSubmit/ProjectSubmitPage';
 const projectSubmit = () => {
     return (
         <>
-            <AppLayout/>
+            <AppLayout>
             <ProjectSubmitPage/>
+            </AppLayout>
         </>
     )
 }

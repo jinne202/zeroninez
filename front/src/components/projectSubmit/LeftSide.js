@@ -43,6 +43,17 @@ const LeftSide = () => {
 const LeftSideWrapper = styled.div`
     color : white;
     position : fixed;
+    top : 300px;
+    left : 12%;
+
+    @media (min-width: 1025px) and (max-width: 1600px) {
+        top : 170px;
+    }
+
+    @media (min-width: 421px) and (max-width: 1024px) {
+        ptop : 170px;
+        left : 8%;
+    }
 
     @media (max-width : 420px) {
         position : relative;
