@@ -115,6 +115,14 @@ const RightNavWrapper = styled.div`
     }
 `
 
+const LinkATag = styled.a`
+    text-decoration : none;
+
+    &:link {
+        
+    }
+`
+
 const ListLink = styled.li`
     font-size : 36px;
     font-weight : 300;

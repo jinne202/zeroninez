@@ -51,7 +51,7 @@ const LeftSideWrapper = styled.div`
     }
 
     @media (min-width: 421px) and (max-width: 1024px) {
-        ptop : 170px;
+        top : 170px;
         left : 8%;
     }
 
@@ -59,6 +59,8 @@ const LeftSideWrapper = styled.div`
         position : relative;
         width : 100%;
         display : block;
+        left : 0;
+        top : 0;
     }
 `
 

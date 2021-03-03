@@ -168,7 +168,7 @@ const RightSide = () => {
         document.getElementById('fileName').innerHTML = e.target.files[0].name;
     }, []);
 
-    const maxLimit = characterCount > 300;
+    const maxLimit = characterCount >= 300;
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
@@ -235,7 +235,7 @@ const RightSide = () => {
                         <Title>프로젝트에 대해 간단히 설명해주세요.</Title>
                         <CountText>{maxLimit ? <CountLimit>{characterCount}</CountLimit> : <CountNotLimit>{characterCount}</CountNotLimit>} / 300자</CountText>
                     </PartTwoTextWrapper>
-                    <TextArea type="text" value={projectExplain} onChange={handleCharacterCount} required></TextArea>
+                    <TextArea type="text" maxLength="300" value={projectExplain} onChange={handleCharacterCount} required></TextArea>
                 </PartTwo>
                 <PartThree>
                     <PartThreeTextWrapper>
@@ -319,6 +319,7 @@ const Title = styled.p`
     & > span {
         font-size : 12px;
         margin : 0 0 0 15px;
+        color : #0094FF;
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -411,10 +412,16 @@ const TextArea = styled.textarea`
     outline : none;
     padding : 20px;
     color : white;
+    font-size : 18px;
+
+    @media (min-width: 421px) and (max-width: 1600px) {
+        font-size : 14px;
+    }
 
     @media (max-width : 420px) {
         margin : 0 0 0 0;
         width : 100%;
+        font-size : 14px;
     }
 `
 
@@ -486,7 +493,7 @@ const FileIcon = styled.div`
 
 const PartThreeDesc = styled.div`
     font-size : 12px;
-    color : #00FFB2;
+    color : #0094FF;
     margin : 15px 0 0 0;
 
     @media (max-width : 420px) {
@@ -516,7 +523,10 @@ const BudgetCheckbox = styled.div`
     @media (max-width : 420px) {
         display : flex;
         flex-wrap: wrap;
-        width : 100%;
+
+        & > div > div {
+            width : 140px;
+        }
     }
 `
 

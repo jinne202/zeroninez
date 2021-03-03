@@ -98,7 +98,7 @@ const CheckBoxLabel = styled.label`
   }
 
   @media (min-width: 421px) and (max-width: 768px) {
-    font-size : 11px;
+    font-size : 10px;
 }
 
   @media (max-width : 420px) {
