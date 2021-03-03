@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import SNSFooter from '../layout/SNSFooter';
 
 const shapeOne = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +70,9 @@ const MainPage = () => {
                     </CardContents>
                 </CardWrapper>
                 <ViewBtnWrapper>
-                    <ViewBtn>→ 포트폴리오 전체보기</ViewBtn>
+                    <Link href="/project">
+                        <ViewBtn>→ 포트폴리오 전체보기</ViewBtn>
+                    </Link>
                 </ViewBtnWrapper>
             </ListWrapper>
         </SecondSection>
@@ -101,9 +104,11 @@ const MainPage = () => {
                 <FourthParagraph>
                 무한한 가능성의 제로다움. 맺음과 연결의 나인다움. 채움의 미학.<br/>모든 제로나인즈 맴버들은 오너쉽과 겸손, 자유와 책임,<br/>열정과 재미라는 핵심 가치를 기반으로 일합니다.<br/>함께 성장하고 동시에 모두가 재미있게 일하는 조직이 되기 위해<br/>다양한 시도와 문화를 이어가고 있습니다.
                 </FourthParagraph>
+                <a href="https://zeroninez.tistory.com/" target="_blank">
                 <FourthBtn>
                     → 과연 그럴까? 제.나.즈.다움.
                 </FourthBtn>
+                </a>
             </FourthWrapper>
         </FourthSection>
         <FifthSection>
@@ -112,9 +117,11 @@ const MainPage = () => {
             </FifthTitle>
             <FifthSectionWrapper>
             <FifthParagraph>최신의 소식과 제로나인즈의 시각으로 인사이트를 제공합니다.</FifthParagraph>
+            <a href="https://zeroninez.tistory.com/" target="_blank">
             <FifthBtn>
                 → 더 많이 살펴볼까?
             </FifthBtn>
+            </a>
             </FifthSectionWrapper>
             <FifthSectionCardWrapper>
                 <FifthSectonCard></FifthSectonCard>

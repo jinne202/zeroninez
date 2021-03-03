@@ -11,18 +11,18 @@ const RightNav = ({ open }) => {
     <RightNavMenu>
         <Overlay open={open}></Overlay>
         <RightNavWrapper active={router.pathname == "/projectSubmit" ? true : false} open={open}>
-            <ul>
+            <ListWrapper>
                 <Link href="/project">
-                    <ListLink>프로젝트 (5)</ListLink>
+                    <ListLink active={router.pathname == "/projectSubmit" ? true : false}>프로젝트 (5)</ListLink>
                 </Link>
                 <a href="https://zeroninez.tistory.com/" target="_blank">
-                <ListLink>제로나인즈 스토리</ListLink>
+                <ListLink active={router.pathname == "/projectSubmit" ? true : false}>제로나인즈 스토리</ListLink>
                 </a>
-                <ListLink>연락처 및 오시는 길</ListLink>
+                <ListLink active={router.pathname == "/projectSubmit" ? true : false}>연락처 및 오시는 길</ListLink>
                 <Link href="/projectSubmit">
-                    <ListLink>프로젝트 의뢰하기</ListLink>
+                    <ListLink active={router.pathname == "/projectSubmit" ? true : false}>프로젝트 의뢰하기</ListLink>
                 </Link>
-            </ul>
+            </ListWrapper>
         </RightNavWrapper>
     </RightNavMenu>
   )
@@ -52,10 +52,10 @@ const Overlay = styled.div`
 const RightNavWrapper = styled.div`
     position : fixed;
     height : 100vh;
-    width : 40%;
+    width : 30%;
     display : block;
     background : #2E2E2E;
-    right : -40%;
+    right : -30%;
     top : 0;
     z-index : 5;
     transition: all 0.4s;
@@ -67,21 +67,9 @@ const RightNavWrapper = styled.div`
         right : 0;
     `}
 
-    & > ul {
-        margin : 230px 0 0 80px;
-    
-        @media (max-width: 768px) {
-            margin : 230px 0 0 50px;
-        }
-    }
-
     ${props => props.active === true &&
         css`
             background : #fff;
-            
-            & > ul > li {
-                color : black;
-            }
         `
     }
 
@@ -115,11 +103,15 @@ const RightNavWrapper = styled.div`
     }
 `
 
-const LinkATag = styled.a`
-    text-decoration : none;
+const ListWrapper = styled.ul`
+    margin : 30vh 0 0 40px;
 
-    &:link {
-        
+    @media (min-width: 421px) and (max-width: 1024px) {
+        margin : 30vh 0 0 8%;
+    }
+
+    @media (max-width: 420px) {
+        margin : 30vh 0 0 8%;
     }
 `
 
@@ -133,6 +125,12 @@ const ListLink = styled.li`
 
     @media (max-width: 420px) {
         font-size : 24px;
+    }
+
+    ${props => props.active === true &&
+        css`
+            color : black;
+        `
     }
 `
 

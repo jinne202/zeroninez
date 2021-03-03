@@ -256,7 +256,7 @@ const RightSide = () => {
                     <InputContainer>
                         <InputWrapper>
                             <InputTitle>팀 . 조직 or 소속명</InputTitle>
-                            <PartFiveInput value={teamInfo} onChange={handleTeamInfo} required></PartFiveInput>
+                            <PartFiveInput placeholder="ex. 제로나인즈" value={teamInfo} onChange={handleTeamInfo} required></PartFiveInput>
                         </InputWrapper>
                         <SquareCheckboxWrapper>
                             <CheckboxSquare title="사회적협동조합 , (예비)사회적기업, 소셜벤처 및 사회적가치를 실현하는 조직입니다." onChange={onChangeCompnay} checked={companyCheck}/>
@@ -293,6 +293,7 @@ const RightSideWrapper = styled.div`
     justify-content : flex-end;
     padding : 0;
     color : white;
+    font-family: 'Noto Sans KR', sans-serif;
 
     @media (max-width : 420px) {
         position : relative;
@@ -403,6 +404,7 @@ const PartTwoTextWrapper = styled.div`
 `
 
 const TextArea = styled.textarea`
+    font-family: 'Noto Sans KR', sans-serif;
     margin : 0 0 0 30px;
     resize : none;
     width : calc(100% - 30px);
@@ -413,6 +415,7 @@ const TextArea = styled.textarea`
     padding : 20px;
     color : white;
     font-size : 18px;
+    line-height : 140%;
 
     @media (min-width: 421px) and (max-width: 1600px) {
         font-size : 14px;

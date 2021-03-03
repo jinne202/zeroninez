@@ -58,6 +58,7 @@ const ProjectPageWrapper = styled.div`
     padding : 0 0 300px 0;
     position : relative;
     background-color : white;
+    font-family: 'Noto Sans KR', sans-serif;
 `
 
 const ProjectTitleSection = styled.div`

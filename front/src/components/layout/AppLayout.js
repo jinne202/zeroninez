@@ -139,6 +139,22 @@ const LogoWrapper = styled.div`
         top : 50px;
         left : 8%;
         width : 50px;
+
+        ${props => props.open === true && props.active === false &&
+            css`
+                & > svg {
+                    fill : white;
+                }
+            `
+        }
+
+        ${props => props.open === true && props.active === true &&
+            css`
+                & > svg {
+                    fill : black;
+                }
+            `
+        }
     }
 `
 
@@ -266,11 +282,6 @@ const HamburgerMenu = styled.div`
 `
 
 const ContentsWrapper = styled.div`
-    ${props =>
-        props.open === true &&
-        css`
-            position : fixed;
-    `}
 `
 
 export default AppLayout;
