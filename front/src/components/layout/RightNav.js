@@ -119,9 +119,13 @@ const ListLink = styled.li`
     font-size : 36px;
     font-weight : 300;
     margin : 0 0 30px 0;
-    color : #00FFB2;
+    color : #ffffff;
 
     cursor : pointer;
+
+    @media (min-width: 1024px) and (max-width: 1600px) {
+        font-size : 30px;
+    }
 
     @media (max-width: 420px) {
         font-size : 24px;

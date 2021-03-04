@@ -35,7 +35,8 @@ const Footer = () => {
 const FooterWrapper = styled.div`
     height : 100vh;
     width : 100%;
-    background-color : #2E2E2E;
+    background: rgb(18,18,18);
+    background: linear-gradient(0deg, rgba(18,18,18,1) 0%, rgba(35,35,35,1) 68%);
     display : block;
     font-family: 'Noto Sans KR', sans-serif;
     position: fixed;
@@ -55,7 +56,7 @@ const FooterInnerContainer = styled.div`
 
 const FooterTitle = styled.p`
     font-family: 'Rajdhani', sans-serif;
-    font-size : 140px;
+    font-size : 130px;
     font-weight : 600;
     line-height : 103%;
     color : #00FFB2;
@@ -117,11 +118,11 @@ const FooterButton = styled.div`
     }
 
     @media (min-width: 631px) and (max-width: 1024px) {
-        margin : 10vh 0 0 0;
+        margin : 5vh 0 0 0;
 
         & > svg {
-            width : 250px;
-            height : 250px;
+            width : 200px;
+            height : 200px;
         }
     }
 
@@ -147,6 +148,13 @@ const BtnText = styled.p`
         left : 80px;
         font-size : 24px;
         line-height : 30px;
+    }
+
+    @media (min-width: 631px) and (max-width: 1024px) {
+        top : 74px;
+        left : 67px;
+        font-size : 18px;
+        line-height : 24px;
     }
 
     @media (max-width: 630px) {

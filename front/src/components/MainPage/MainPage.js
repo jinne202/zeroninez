@@ -138,19 +138,16 @@ const MainPage = () => {
                     <SixthCardText>
                     SEOJONG OFFICE (본사) <br/> 세종 조치원읍 세종로2639, U동 410호<br/>0507-1370-9590
                     </SixthCardText>
-                    <SixthMapBtn>지도보기</SixthMapBtn>
                 </SixthSectionCard>
                 <SixthSectionCard>
                     <SixthCardText>
                         SEOUl OFFICE <br/>서울 마포구 잔다리로 28, 7f<br/>02-1234-4567
                     </SixthCardText>
-                    <SixthMapBtn>지도보기</SixthMapBtn>
                 </SixthSectionCard>
                 <SixthSectionCard>
                 <SixthCardText>
                 SEOUL BRANCH<br/>서울 광진구 군자로70, 4f<br/>02-1234-4567
                 </SixthCardText>
-                <SixthMapBtn>지도보기</SixthMapBtn>
                 </SixthSectionCard>
             </SixthSectionCardWrapper>
         </SixthSection>

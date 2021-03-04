@@ -3,9 +3,7 @@ import styled, { css } from 'styled-components';
 import RightNav from './RightNav';
 import Link from 'next/link'
 import { useRouter } from "next/router";
-
-import logo from '../../../static/img/logo.png';
-import whiteLogo from '../../../static/img/logoWhite.png';
+import useScrollDirection from '../../hooks/useScrollDirection';
 
 const znzLogo = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.71 98.84"><defs></defs><title>자산 16</title><g id="레이어_2" data-name="레이어 2"><g id="Layer_1" data-name="Layer 1"><rect class="cls-1" x="22.07" y="23" width="12.67" height="5.05" rx="2.53"/><rect class="cls-1" x="22.07" y="0.61" width="12.67" height="5.05" rx="2.53"/><rect class="cls-1" x="22.07" y="11.81" width="12.67" height="5.05" rx="2.53"/><rect class="cls-1" x="25.67" y="36.57" width="5.58" height="4.32" rx="1.95" transform="translate(-10.27 67.19) rotate(-90)"/><path d="M12.7,38.42H12A9.51,9.51,0,0,0,2.41,48V63.69a2.69,2.69,0,0,0,2.39,2.7,2.61,2.61,0,0,0,2.86-2.57V47.19a2.63,2.63,0,0,1,2.65-2.61H14a2.63,2.63,0,0,1,2.65,2.61v16.5A2.69,2.69,0,0,0,19,66.39a2.61,2.61,0,0,0,2.86-2.57V48A9.42,9.42,0,0,0,12.7,38.42Z"/><path d="M44.4,38.42h-.72A9.51,9.51,0,0,0,34.11,48V63.69a2.69,2.69,0,0,0,2.39,2.7,2.61,2.61,0,0,0,2.86-2.57V47.19A2.63,2.63,0,0,1,42,44.58h3.66a2.63,2.63,0,0,1,2.65,2.61v16.5a2.69,2.69,0,0,0,2.39,2.7,2.61,2.61,0,0,0,2.86-2.57V48A9.42,9.42,0,0,0,44.4,38.42Z"/><rect class="cls-1" x="62.4" y="60.91" width="12.67" height="4.96" rx="2.37"/><rect class="cls-1" x="62.4" y="38.94" width="12.67" height="4.96" rx="2.37"/><rect class="cls-1" x="62.4" y="49.93" width="12.67" height="4.96" rx="2.37"/><path d="M16.29,4A2.39,2.39,0,0,0,14.11.61H5A2.39,2.39,0,0,0,2.59,3v.28A2.39,2.39,0,0,0,5,5.67H5A2.38,2.38,0,0,1,7.18,9L.21,24.7a2.39,2.39,0,0,0,2.18,3.36h9.34a2.39,2.39,0,0,0,2.38-2.39v-.28A2.39,2.39,0,0,0,11.73,23H11.5a2.38,2.38,0,0,1-2.18-3.35Z"/><path d="M36.5,74.75a2.38,2.38,0,0,0-2.18-3.35H25.18a2.38,2.38,0,0,0-2.38,2.38v.29a2.37,2.37,0,0,0,2.38,2.38h0a2.39,2.39,0,0,1,2.18,3.36l-7,15.68a2.38,2.38,0,0,0,2.18,3.35h9.34a2.38,2.38,0,0,0,2.39-2.38v-.29a2.39,2.39,0,0,0-2.39-2.38h-.22a2.39,2.39,0,0,1-2.18-3.36Z"/><path d="M53.35,4A2.39,2.39,0,0,0,51.17.61H42A2.39,2.39,0,0,0,39.65,3v.28A2.39,2.39,0,0,0,42,5.67h0A2.38,2.38,0,0,1,44.24,9l-1.93,4.35a2.32,2.32,0,0,0,0,1.93l5,11.34a2.38,2.38,0,0,0,2.18,1.42h1.64a2.39,2.39,0,0,0,2.18-3.36l-4.18-9.4a2.4,2.4,0,0,1,0-1.93Z"/><path d="M68.85,0h-.23a9.85,9.85,0,0,0-9.86,9.86v9a9.85,9.85,0,0,0,9.86,9.86h.23a9.85,9.85,0,0,0,9.86-9.86V9.86A9.85,9.85,0,0,0,68.85,0ZM73,19.78a3,3,0,0,1-3,3H67.49a3,3,0,0,1-3-3V8.89a3,3,0,0,1,3-3H70a3,3,0,0,1,3,3Z"/></g></g></svg>
 
@@ -19,6 +17,10 @@ const AppLayout = ({ children }) => {
     const handleOpen = () => {
         setOpen(!open)
     }
+
+    const scrollDirection = useScrollDirection();
+
+    console.log(scrollDirection, "scroll");
  
     // useEffect(() => {
     //     let scrollPosition = 0;
@@ -62,11 +64,11 @@ const AppLayout = ({ children }) => {
         <>
         <LayoutWrapper>
             <Link href="/">
-                <LogoWrapper active={router.pathname == "/projectSubmit" ? true : false} open={open} header={header}>
+                <LogoWrapper active={router.pathname == "/projectSubmit" ? true : false} open={open} header={header} scrollDir={scrollDirection}>
                     {znzLogo}
                 </LogoWrapper>
             </Link>
-            <MenuBtn open={open} onClick={handleOpen}>
+            <MenuBtn open={open} onClick={handleOpen} header={header} scrollDir={scrollDirection}>
                 <HamburgerMenu active={router.pathname == "/projectSubmit" ? true : false} open={open} header={header}></HamburgerMenu>
             </MenuBtn>
         </LayoutWrapper>
@@ -91,6 +93,11 @@ const LogoWrapper = styled.div`
     left : 54px;
     width : 75px;
     z-index : 1000;
+    overflow: visible;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+
 
     & > svg {
         fill : black;
@@ -138,7 +145,7 @@ const LogoWrapper = styled.div`
     @media (max-width: 630px) {
         top : 50px;
         left : 8%;
-        width : 50px;
+        width : 40px;
 
         ${props => props.open === true && props.active === false &&
             css`
@@ -155,6 +162,18 @@ const LogoWrapper = styled.div`
                 }
             `
         }
+
+        ${props => props.scrollDir === "up" &&
+        css`
+            transform: translateY(0);
+        `
+        }
+
+        ${props => props.scrollDir === "down" &&
+        css`
+            transform: translateY(-200%);
+        `
+        }
     }
 `
 
@@ -166,15 +185,45 @@ const MenuBtn = styled.div`
     position : fixed;
     z-index : 1000;
     right : 54px;
+    border : 1px solid black;
+    overflow: visible;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
 
-    @media (min-width: 421px) and (max-width: 1024px) {
+    ${props =>
+        props.open === true &&
+        css`
+            border : 1px solid white;
+    `}
+
+    ${props => props.header === true &&
+        css`
+            border : 1px solid white;
+        `
+    }
+
+    @media (min-width: 631px) and (max-width: 1024px) {
         top : 55px;
         right : 8%;
     }
 
-    @media (max-width : 420px) {
-        top : 55px;
+    @media (max-width : 630px) {
+        top : 45px;
         right : 8%;
+        border : 0;
+
+        ${props => props.scrollDir === "up" &&
+        css`
+            transform: translateY(0);
+        `
+        }
+
+        ${props => props.scrollDir === "down" &&
+        css`
+            transform: translateY(-200%);
+        `
+        }
     }
 `
 
@@ -184,8 +233,12 @@ const HamburgerMenu = styled.div`
     background: black;
     width: 25px;
     height: 2px;
-    margin : 0 0 0 34px;
+    margin : 4px 0 0 17px;
     transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    @media (max-width : 420px) {
+        margin : 4px 0 0 35px;
+    }
 
     ${props => props.header === true &&
         css`
