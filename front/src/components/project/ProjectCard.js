@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ProjectCard = ({ posting }) => {
     return (
             <StoryCardWrapper>
-                <Link href={{ pathname: 'posting/' + posting.id }}>
+                <Link href={{ pathname: 'posting/' + posting.title }}>
                 <StoryCardUI>
                     <StoryCardImgWrapper>
                         <img src={posting.coverImage}/>
@@ -14,7 +14,7 @@ const ProjectCard = ({ posting }) => {
                 </Link>
                 <StoryInfo>
                     <StoryTitle>
-                        <UserName>{posting.title}</UserName>
+                        <UserName>{posting.postTitle}</UserName>
                     </StoryTitle>
                 </StoryInfo>
             </StoryCardWrapper>
@@ -23,7 +23,7 @@ const ProjectCard = ({ posting }) => {
 
 const StoryCardUI = styled.div`
     position: relative;
-    max-width : 450px;
+    max-width : 650px;
     min-width : 250px;
 	height: 0;
 	overflow: hidden;

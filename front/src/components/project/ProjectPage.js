@@ -42,12 +42,14 @@ const ProjectPage = () => {
                 );
             })}
         </CardGrid>
-        <ShowMore>
-            <IconWrapper>
-                {arrowIcon}
-            </IconWrapper>
-            <ShowMoreText>더보기</ShowMoreText>
-        </ShowMore>
+        <ShowButtonWrapper>
+            <ShowMore>
+                <IconWrapper>
+                    {arrowIcon}
+                </IconWrapper>
+                <ShowMoreText>더보기</ShowMoreText>
+            </ShowMore>
+        </ShowButtonWrapper>
     </ProjectPageWrapper>
     )
 }
@@ -153,10 +155,16 @@ const CardGrid = styled.div`
     }
 `
 
-const ShowMore = styled.div`
-    margin : 100px 0 0 0;
-    position : relative;
+const ShowButtonWrapper = styled.div`
     width : 100%;
+    text-align : center;
+`
+
+const ShowMore = styled.div`
+    margin : 100px auto 0;
+    position : relative;
+    display : inline-block;
+    width : 200px;
 `
 
 const IconWrapper = styled.div`
@@ -165,12 +173,19 @@ const IconWrapper = styled.div`
     margin : 0 auto;
 `
 
-const ShowMoreText = styled.p`
+const ShowMoreText = styled.button`
+    margin : 0 auto;
     position : absolute;
     top : 40px;
     font-size : 18px;
-    width : 100%;
-    text-align   : center;
+    width : 200px;
+    text-align : center;
+    display : block;
+    background-color : white;
+    border : none;
+    outline : none;
+    padding : 10px 0;
+    cursor : pointer;
 `
 
 const MenuTitle = styled.p`

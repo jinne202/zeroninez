@@ -1,6 +1,7 @@
 export const projectInitialState = {
     isProjectSubmiting : false, // submit 시도
-    isProjectSubmit : false // submit 여부
+    isProjectSubmit : false, // submit 여부
+    projectSubmitError : null,
 }
 
 export const PROJECT_SUBMIT_REQUEST = 'PROJECT_SUBMIT_REQUEST';
@@ -15,6 +16,7 @@ export const projectSubmitReducer = (state = projectInitialState, action) =>
                 ...state,
                 isProjectSubmiting : true,
                 isProjectSubmit : false,
+                projectSubmitError : null,
             }
         }
         case PROJECT_SUBMIT_SUCCESS : {
@@ -29,6 +31,7 @@ export const projectSubmitReducer = (state = projectInitialState, action) =>
                 ...state,
                 isProjectSubmiting : false,
                 isProjectSubmit : false,
+                projectSubmitError : action.error,
             }
         }
 

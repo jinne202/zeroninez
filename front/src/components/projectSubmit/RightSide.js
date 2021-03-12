@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link'
+import swal from 'sweetalert';
 import Checkbox from './Checkbox';
+import PrivacyPolicy from '../layout/PrivacyPolicy';
 import CheckboxSquare from './CheckboxSquare';
 import { Consult } from './Consult';
 import { Visual } from './Visual';
@@ -15,6 +18,8 @@ import { AiOutlinePaperClip } from "react-icons/ai";
 
 const RightSide = () => {
     const dispatch = useDispatch();
+
+    const { isProjectSubmit, projectSubmitError } = useSelector((state) => state.projectSubmitReducer);
 
     const [isCheck, setIsCheck] = useState([]);
     const [consultList, setConsultList] = useState([]);
@@ -46,6 +51,10 @@ const RightSide = () => {
     const onChangeIndividual = (e) => {
         setIndividualCheck(e.target.checked);
     }
+
+    // const handleIndividualClick = (e) => {
+    //     alert("alert");
+    // }
 
     useEffect(() => {
         setConsultList(Consult);
@@ -181,7 +190,6 @@ const RightSide = () => {
         if (isCheckBudget.length < 1) {
             return ;
         }
-        console.log(isCheckBudget)
         return dispatch({
             type : PROJECT_SUBMIT_REQUEST,
             data : {
@@ -195,10 +203,23 @@ const RightSide = () => {
                 individualCheck,
             },
             file : file
-        }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck, isCheckBudget, file]);
-    })
+        });
+    }, [isCheck, projectExplain, teamInfo, companyCheck, positionInfo, emailInfo, individualCheck, isCheckBudget, file]);
+
+    useEffect(() => {
+        if (isProjectSubmit) {
+            swal("", "프로젝트 검토 후 연락드리겠습니다", "success");
+        }
+    }, [isProjectSubmit]);
+
+    useEffect(() => {
+        if (projectSubmitError) {
+            swal("", "제안서를 다시 확인해주세요", "error")
+        }
+    }, [projectSubmitError]);
 
     return (
+        <>
         <RightSideWrapper>
             <FormWrapper onSubmit={handleSubmit}>
                 <PartOne>
@@ -259,7 +280,7 @@ const RightSide = () => {
                             <PartFiveInput placeholder="ex. 제로나인즈" value={teamInfo} onChange={handleTeamInfo} required></PartFiveInput>
                         </InputWrapper>
                         <SquareCheckboxWrapper>
-                            <CheckboxSquare title="사회적협동조합 , (예비)사회적기업, 소셜벤처 및 사회적가치를 실현하는 조직입니다." onChange={onChangeCompnay} checked={companyCheck}/>
+                            <CheckboxSquare onChange={onChangeCompnay} checked={companyCheck}>사회적협동조합 , (예비)사회적기업, 소셜벤처 및 사회적가치를 실현하는 조직입니다.</CheckboxSquare>
                         </SquareCheckboxWrapper>
                         <InputWrapperMargin>
                             <InputTitle>담당자 성명과 직함</InputTitle>
@@ -271,7 +292,7 @@ const RightSide = () => {
                         </InputWrapperMargin>
                         <IndividaulWrapper>
                         <SquareCheckboxWrapper>
-                        <CheckboxSquare title="개인정보 수집, 이용및 처리위탁에 동의합니다." onChange={onChangeIndividual} checked={individualCheck}/>
+                        <CheckboxSquare onChange={onChangeIndividual} checked={individualCheck}><Link href="/test"><IndividualBtn>개인정보 수집, 이용및 처리위탁</IndividualBtn></Link>에 동의합니다. (필수)</CheckboxSquare>
                         </SquareCheckboxWrapper>
                         </IndividaulWrapper>
                     </InputContainer>
@@ -279,11 +300,12 @@ const RightSide = () => {
                 <LastDesc>
                 파트너로서 제로나인즈를 고려해주셔서 감사합니다.<br/>프로젝트가 성공할 수 있도록 함께 고민해드리겠습니다.<br/>고맙습니다.
                 </LastDesc>
-                <SubmitBtn>
+                <SubmitBtn type="submit">
                     문의하기
                 </SubmitBtn>
             </FormWrapper>
         </RightSideWrapper>
+        </>
     )
 }
 
@@ -644,6 +666,15 @@ const SubmitBtn = styled.button`
     border : 0;
     outline : none;
     cursor : pointer;
+    border-radius : 5px;
+    transition: 0.4s ease all;
+    -moz-transition: 0.4s ease all;
+    -webkit-transition: 0.4s ease all;
+
+    &:hover {
+        background-color : #00FFD1;
+        box-shadow: 0 0 10px 3px rgba(0,0,0, 0.3);
+    }
 
     @media (max-width : 420px) {
         width : 100%;
@@ -651,6 +682,22 @@ const SubmitBtn = styled.button`
         height : 60px;
         font-size : 18px;
     }
+`
+
+const IndividualBtn = styled.a`
+    color : #00FFB2;
+    display : inline-block;
+    border-bottom : 2px solid #00FFB2;
+    padding : 0 0 7px 0;
+`
+
+const PolicyWrapper = styled.div`
+    height : 100%;
+    position : fixed;
+    top : 0;
+    left : 0;
+    z-index : 9999;
+    width : 100%;
 `
 
 export default RightSide;

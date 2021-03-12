@@ -91,6 +91,22 @@ body::-webkit-scrollbar-corner {
 background-color: #f9f9f9;
 }
 
-a {color: #fff; text-decoration: none; outline: none}
+a {text-decoration: none; outline: none}
 
-a:hover, a:active {text-decoration: none; color:#fff; background-color:transparent;}
+a:hover, a:active {text-decoration: none; background-color:transparent;}
+
+.swal-footer {
+  text-align : center;
+}
+
+.swal-button {
+  background-color: #00FFB2;
+  transition: 0.4s ease all;
+  -moz-transition: 0.4s ease all;
+  -webkit-transition: 0.4s ease all;
+  outline : none;
+}
+
+.swal-button:hover {
+  background-color : #00FFD1;
+}

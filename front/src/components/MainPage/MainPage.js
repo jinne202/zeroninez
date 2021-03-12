@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import SNSFooter from '../layout/SNSFooter';
+import Fade from 'react-reveal/Fade';
 
 const shapeOne = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 0L10.5201 6.21592L12.698 0.370827L11.5218 6.49656L15.1958 1.45581L12.4105 7.03705L17.3084 3.17447L13.1205 7.79728L18.8789 5.39935L13.5991 8.72087L19.7908 7.96544L13.8108 9.73934L19.9767 10.6824L13.7398 10.7771L19.4226 13.3488L13.3914 11.7573L18.1697 15.7668L12.7915 12.6071L16.3109 17.7571L11.9846 13.2636L13.984 19.1721L11.0305 13.678L11.3617 19.9069L10 13.8197L8.63833 19.9069L8.96947 13.678L6.01599 19.1721L8.01537 13.2636L3.68912 17.7571L7.20846 12.6071L1.8303 15.7668L6.60858 11.7573L0.577391 13.3488L6.26023 10.7771L0.0233126 10.6824L6.18924 9.73934L0.209159 7.96544L6.40088 8.72087L1.12115 5.39935L6.87945 7.79728L2.69164 3.17447L7.58946 7.03705L4.80416 1.45581L8.47824 6.49656L7.30203 0.370827L9.47989 6.21592L10 0Z" fill="#00FFB2"/>
@@ -18,23 +19,34 @@ const MainPage = () => {
         <MenuTitle>안녕하세요. 제로나인즈 입니다.</MenuTitle>
         <MainSection>
             <TextWrapper>
+                <Fade bottom distance="50px">
                 <MainText>
                     덕 - 업 - 일 - 취 - 월 - 장
                 </MainText>
+                </Fade>
+                <Fade bottom distance="50px" delay={300}>
                 <SubText>
                     열정을 담아 거듭나는 모든 <br/>크리에이터를 응원합니다.
                 </SubText>
+                </Fade>
+                <Fade bottom distance="50px" delay={700}>
                 <NumberAnimation>
                     <Number>0<span>{shapeTwo}</span></Number>
                     <Number>9<span>{shapeOne}</span></Number>
                 </NumberAnimation>
+                </Fade>
             </TextWrapper>
         </MainSection>
         <SecondSection>
+            <Fade bottom distance="50px">
             <SecondTitle>Turn your creativity <br/>into reality</SecondTitle>
+            </Fade>
+            <Fade bottom distance="100px">
             <SecondParagraph>
             제로나인즈는 사회적 가치를 추구하는 프로젝트와 크리에이터를 위한 최적의 디자인, 디지털 솔루션을 만들고 있습니다.<br/>사용자경험디자인, 서비스디자인, 브랜드컨설팅, 정보시각디자인, 영상편집, 문화상품제작, 웹사이트제작, 어플리케이션개발, 시스템 운영<br/>등의 서비스를 제공하고 있습니다.
             </SecondParagraph>
+            </Fade>
+            <Fade bottom distance="150px">
             <ListWrapper>
                 <CardWrapper>
                     <CardTitle>디자인 컨설팅</CardTitle>
@@ -75,9 +87,13 @@ const MainPage = () => {
                     </Link>
                 </ViewBtnWrapper>
             </ListWrapper>
+            </Fade>
         </SecondSection>
         <ThirdSection>
+            <Fade bottom distance="50px">
             <ThirdTitle>함께 성장을 꿈꾸는<br/>크리에이터를 위한 커뮤니티</ThirdTitle>
+            </Fade>
+            <Fade bottom distance="150px">
             <ThirdCardListWrapper>
                 <CommunityCard>
                     <CommunityTitle>hi-holix.com<span>holixboom community</span></CommunityTitle>
@@ -92,29 +108,41 @@ const MainPage = () => {
                     <CommunityTitle>mingle.com<span>SNS Based PR Platform</span></CommunityTitle>
                 </CommunityCard>
             </ThirdCardListWrapper>
+            </Fade>
+            <Fade bottom distance="100px">
             <ThirdParagraph>
             제로나인즈는 더 나은 세상을 만들기 위해 노력하는 수많은 사람들과 함께 성장해요.<br/> 소셜섹터 실무자의 역량을 높이고, 사회적 가치를 확대하는 자체 플랫폼을 기획하고 운영하고 있습니다.
             </ThirdParagraph>
+            </Fade>
         </ThirdSection>
         <FourthSection>
             <FourthWrapper>
+                <Fade bottom distance="50px">
                 <FourthTitle>
                     제로나인즈의 라이프스타일 . <span>Lifestyle blog</span>
                 </FourthTitle>
+                </Fade>
+                <Fade bottom distance="100px">
                 <FourthParagraph>
                 무한한 가능성의 제로다움. 맺음과 연결의 나인다움. 채움의 미학.<br/>모든 제로나인즈 맴버들은 오너쉽과 겸손, 자유와 책임,<br/>열정과 재미라는 핵심 가치를 기반으로 일합니다.<br/>함께 성장하고 동시에 모두가 재미있게 일하는 조직이 되기 위해<br/>다양한 시도와 문화를 이어가고 있습니다.
                 </FourthParagraph>
+                </Fade>
                 <a href="https://zeroninez.tistory.com/" target="_blank">
+                <Fade bottom distance="150px">
                 <FourthBtn>
                     → 과연 그럴까? 제.나.즈.다움.
                 </FourthBtn>
+                </Fade>
                 </a>
             </FourthWrapper>
         </FourthSection>
         <FifthSection>
+            <Fade bottom distance="50px">
             <FifthTitle>
                 제로나인즈의 시선 . <span>Insight blog</span>
             </FifthTitle>
+            </Fade>
+            <Fade bottom distance="100px">
             <FifthSectionWrapper>
             <FifthParagraph>최신의 소식과 제로나인즈의 시각으로 인사이트를 제공합니다.</FifthParagraph>
             <a href="https://zeroninez.tistory.com/" target="_blank">
@@ -123,16 +151,22 @@ const MainPage = () => {
             </FifthBtn>
             </a>
             </FifthSectionWrapper>
+            </Fade>
+            <Fade bottom distance="150px">
             <FifthSectionCardWrapper>
                 <FifthSectonCard></FifthSectonCard>
                 <FifthSectonCard></FifthSectonCard>
                 <FifthSectonCard></FifthSectonCard>
             </FifthSectionCardWrapper>
+            </Fade>
         </FifthSection>
         <SixthSection>
+            <Fade bottom distance="50px">
             <SixthTitle>
                 혁신도시 세종 - 빅파워 서울에서 작업합니다.
             </SixthTitle>
+            </Fade>
+            <Fade bottom distance="150px">
             <SixthSectionCardWrapper>
                 <SixthSectionCard>
                     <SixthCardText>
@@ -150,6 +184,7 @@ const MainPage = () => {
                 </SixthCardText>
                 </SixthSectionCard>
             </SixthSectionCardWrapper>
+            </Fade>
         </SixthSection>
         <SNSFooter/>
         </MainPageWrapper>
@@ -287,16 +322,16 @@ const ListWrapper = styled.div`
     margin : 148px 0 0 0;
     display : flex;
     flex-wrap: wrap;
-    gap : 30px;
+    gap: 12px;
     justify-content : space-between;
 `
 
 const CardWrapper = styled.div`
     margin : 0 0 30px 0;
-    width : 30%;
+    width : 32%;
 
     @media (min-width: 1025px) and (max-width: 1439px) {
-        width : 30%;
+        width : 32%;
     }
 
     @media (max-width: 1024px) {

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Children } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
-const Checkbox = ({ checked, title, ...rest }) => {
+const Checkbox = ({ checked, children, ...rest }) => {
   return (
     <div>
       <CheckBoxLabel>
@@ -11,7 +12,7 @@ const Checkbox = ({ checked, title, ...rest }) => {
           <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
           </svg>
         </CheckBoxIcon>
-        <CheckBoxText checked={checked}>{title}</CheckBoxText>
+        <CheckBoxText checked={checked}>{children}</CheckBoxText>
       </CheckBoxLabel>
     </div>
   );
